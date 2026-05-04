@@ -1,0 +1,47 @@
+container:
+  type: ColumnPanel
+  properties: {}
+components:
+- type: ColumnPanel
+  properties: {role: graph_ultracontainer}
+  name: content_panel
+  layout_properties:
+    col_widths: {}
+    grid_position: BQAUXP,KAORNN
+    full_width_row: false
+  components:
+  - type: FlowPanel
+    properties: {role: graph_navigation}
+    name: tabs
+    layout_properties: {grid_position: 'SHKAJT,MGKKJU'}
+    components: []
+    event_bindings: {show: tabs_show}
+  - type: FlowPanel
+    properties: {}
+    name: sub_tabs
+    layout_properties: {grid_position: 'QLXCKV,YCAXIK'}
+  - type: ColumnPanel
+    properties: {role: graph_supercontainer}
+    name: column_panel_2
+    layout_properties: {grid_position: 'PFCIQQ,YSUAKQ'}
+    components:
+    - type: ColumnPanel
+      properties: {role: the_graphs, visible: true}
+      name: figure_container
+      layout_properties: {grid_position: 'QNQZHX,JXOYRH'}
+      components: []
+    # - type: Button
+    #   properties: {role: primary-color, align: center, tooltip: '', border: '',
+    #       enabled: true, foreground: '', visible: true, text: Hide Legends, font_size: null,
+    #       font: '', spacing_above: small, icon_align: left, spacing_below: small,
+    #       italic: false, background: '', bold: false, underline: false, icon: ''}
+    #   name: hide_legend
+    #   layout_properties: {}
+    #   event_bindings: {click: hide_legend}    
+  - type: ColumnPanel
+    properties: {role: unwanted-1, visible: false}
+    name: warnings_panel
+    layout_properties: {slot: default, grid_position: 'PFCIQQ,OROLTQ'}
+    components: []
+is_package: true
+custom_component: true

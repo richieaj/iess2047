@@ -1,0 +1,141 @@
+is_package: true
+container:
+  type: HtmlTemplate
+  properties: {html: '@theme:standard-page.html'}
+  data_bindings: []
+components:
+- type: Label
+  properties: {role: null, align: left, tooltip: '', border: '', foreground: '', visible: true,
+    text: IESS 2047}
+  name: title
+  layout_properties: {slot: title}
+- type: ColumnPanel
+  # properties: {col_widths: '{"BITUCV":2,"PKRSVT":1}', role: '2050', spacing_above: none,
+  properties: { role: '2050'}
+  name: main_area
+  layout_properties: {slot: default}
+  components:
+  - type: LinearPanel
+    properties: {role: leverContainer}
+    name: sliders_column
+    layout_properties: {grid_position: 'GYKMWG,BITUCV', slot: left-nav, full_width_row: true}
+    components:
+    - type: LinearPanel
+      properties: {}
+      name: pathways_card
+      layout_properties: {grid_position: 'QSNDWO,JOEWHC'}
+      components:
+      - type: Button
+        properties: {role: panel_closer, align: center, tooltip: '', border: '',
+           enabled: true, foreground: '', visible: true, text: Close Panel, font_size: null,
+           font: '', spacing_above: small, icon_align: left, spacing_below: small,
+           italic: false, background: '', bold: false, underline: false, icon: ''}
+        name: panel_closd
+        layout_properties: {grid_position: 'PLRDHP,BHLNYW'}
+      - type: Button
+        properties: {role: primary-color, align: center, tooltip: '', border: '',
+           enabled: true, foreground: '', visible: true, text: Reset Levers, font_size: null,
+           font: '', spacing_above: small, icon_align: left, spacing_below: small,
+           italic: false, background: '', bold: false, underline: false, icon: ''}
+        name: reset_button
+        layout_properties: {grid_position: 'PLRDHP,BHLNYW'}
+        event_bindings: {click: reset_button_click}      
+      - type: Button
+        properties: {role: curtain_maker, align: center, tooltip: '', border: '',
+           enabled: true, foreground: '', visible: true, text: Click, font_size: null,
+           font: '', spacing_above: small, icon_align: left, spacing_below: small,
+           italic: false, background: '', bold: false, underline: false, icon: ''}
+        name: curtain
+        # layout_properties: {grid_position: 'PLRDHP,BHLNYW'}
+        event_bindings: {click: curtain_clicker}      
+      - type: Label
+        properties: {role: subheading, tooltip: '', border: '', foreground: '',
+          visible: true, text: Example Pathways, font_size: null, font: '', spacing_above: small,
+          icon_align: left, italic: false, background: '', bold: true,
+          underline: false, icon: ''}
+        #name: col2_label
+        layout_properties: {}
+      - type: DropDown
+        properties:
+          role: select_box_pathways
+          align: full
+          tooltip: ''
+          placeholder: Custom Pathway
+          border: ''
+          enabled: true
+          foreground: ''
+          items: []
+          visible: true
+          font_size: null
+          font: ''
+          spacing_above: none
+          spacing_below: none
+          italic: false
+          background: ''
+          bold: false
+          underline: false
+          include_placeholder: true
+        name: pathways_dropdown
+        layout_properties: {grid_position: 'PLRDHP,OXNENJ'}
+        event_bindings: {change: pathways_dropdown_change}
+    - type: XYPanel
+      properties: {role: bottom-border, height: '32',
+        tooltip: '', border: '', foreground: '', visible: true, background: ''}
+      name: settings_title_card
+      layout_properties: {}
+      components:
+      - type: Label
+        properties: {role: subheading, tooltip: '', border: '', foreground: '',
+          visible: true, text: 'Lever Settings', font_size: null, font: '', spacing_above: small,
+          icon_align: left, italic: false, background: '', bold: true,
+          underline: false, icon: ''}
+        name: col1_label
+        layout_properties: {}
+      - type: Label
+        properties: {role: subheading, tooltip: '', border: '', foreground: '',
+          visible: true, text: 'Level of Ambition', font_size: null, font: '', spacing_above: small,
+          icon_align: left, italic: false, background: '', bold: true,
+          underline: false, icon: ''}
+        name: col2_label
+        layout_properties: {}
+    - type: XYPanel
+      properties: {role: bottom-border, height: '20',
+        tooltip: '', border: '', foreground: '', visible: true, background: ''}
+      name: settings_title_card1
+      layout_properties: {}
+      components:
+      - type: Label
+        properties: {role: subheading, tooltip: '', border: '', foreground: '',
+          visible: true, text: '           ', font_size: null, font: '', spacing_above: null,
+          icon_align: left, italic: false, background: '', bold: true,
+          underline: false, icon: ''}
+        name: col12_label
+        layout_properties: {}
+      - type: Label
+        properties: {role: subheading, tooltip: '', border: '', foreground: '',
+          visible: true, text: '1     2     3     4', font_size: null, font: '', spacing_above: null,
+          icon_align: left, italic: false, background: '', bold: true,
+          underline: false, icon: ''}
+        name: col22_label
+        layout_properties: {}
+    - type: RepeatingPanel
+      properties: {role: repeating-container, tooltip: '', border: '', foreground: '', items: null,
+        visible: true, spacing_above: small, spacing_below: small, item_template: Main.LeverCategory,
+        background: ''}
+      name: lever_group_panel
+      layout_properties: {grid_position: 'IPNHGZ,SIGQFA', full_width_row: false}
+      data_bindings: []
+      event_bindings: {}
+    - type: Button
+      properties: {role: none, align: center, tooltip: '', border: '', enabled: false,
+        foreground: '', visible: false, text: 2100 Mode, font_size: null,
+        font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+        background: '', bold: false, underline: false, icon: ''}
+      name: expert_toggle
+      layout_properties: {grid_position: 'LRIAJT,HLZOEC'}
+      event_bindings: {click: expert_toggle_click}
+  - type: LinearPanel
+    properties: {role: graph_master_container, visible: true}
+    name: plot_area
+    layout_properties: {grid_position: 'GYKMWG,PKRSVT'}
+    components: []

@@ -1,0 +1,11 @@
+This directory contains the following files:
+
+* `test.xlsx` - A simple example spreadsheet following the conventions of models
+  from the 2050 Calculators project. This is included only as a reference for
+  the other files.
+* `_interface2050.cpython-39-x86_64-linux-gnu.so` and `interface2050.py` - A
+  compiled library and Python interface for `test.xlsx`. Produced using
+  https://github.com/ImperialCollegeLondon/calc2050_spreadsheet_converter
+* `web_outputs.json` - A simplified dummy version of the web_outputs.json in the
+  project root directory. Based on the Mackay calculator spreadsheet rather than
+  `test.xlsx`

@@ -1,0 +1,744 @@
+{
+    "weboutputs_summary_table": {
+        "Webtool Page": [
+            "All Energy",
+            "All Energy",
+            "All Energy",
+            "All Energy",
+            "Electricity",
+            "Electricity",
+            "Energy Security",
+            "Energy Security",
+            "Emissions",
+            "Emissions",
+            "Indicators",
+            "Indicators",
+            "Indicators",
+            "Indicators",
+            "Indicators",
+            "Indicators",
+            "Land and Water Use",
+            "Land and Water Use",
+            "Costs",
+            "Costs",
+            "Costs",
+            "Costs",
+            "Energy Flows",
+            "Energy Flows",
+            "Energy Flows",
+            "Energy Flows",
+            "Energy Flows",
+            "Energy Flows"
+        ],
+        "Webtool Tab": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            "Energy Emissions Intensity of GDP",
+            "Energy Emissions Intensity of GDP",
+            "Per Capita Indicators",
+            "Per Capita Indicators",
+            "Electricity Indicators",
+            "Electricity Indicators",
+            null,
+            null,
+            "Annual Import & Energy costs",
+            "Annual Import & Energy costs",
+            "Power Sector Cost",
+            "Power Sector Cost",
+            2022,
+            2027,
+            2032,
+            2037,
+            2042,
+            2047
+        ],
+        "Position": [
+            "Ltop",
+            "Rtop",
+            "Lbottom",
+            "Rbottom",
+            "Left",
+            "Right",
+            "Left",
+            "Right",
+            "Left",
+            "Right",
+            "Left",
+            "Right",
+            "Left",
+            "Right",
+            "Left",
+            "Right",
+            "Left",
+            "Right",
+            "Left",
+            "Right",
+            "Left",
+            "Right",
+            "Page",
+            "Page",
+            "Page",
+            "Page",
+            "Page",
+            "Page"
+        ],
+        "Title": [
+            "Energy Demand",
+            "Energy Supply",
+            "Import Dependence",
+            "Energy Emissions intensity to GDP",
+            "Electricity Demand (Including Captive)",
+            "Electricity Supply (Utility)",
+            "Import Dependence",
+            "Energy Imports",
+            "Energy-related GHG Emissions",
+            "Per Capita GHG Emissions (Energy-related)",
+            "Energy Emissions Intensity of GDP",
+            "Energy intensity of GDP",
+            "Per Capita GHG Emissions",
+            "Per Capita Primary Energy Supply",
+            "Installed Capacity",
+            "Demand Electrification",
+            "Land Use",
+            "Water use",
+            "Annual Import Costs (Nominal)",
+            "Annual Production Costs (Nominal)",
+            "Power Sector capex",
+            "Annual Operating Costs",
+            "Energy Flow Diagram",
+            "Energy Flow Diagram",
+            "Energy Flow Diagram",
+            "Energy Flow Diagram",
+            "Energy Flow Diagram",
+            "Energy Flow Diagram"
+        ],
+        "Axis Unit": [
+            "Mtoe",
+            "Mtoe",
+            "%",
+            "kg CO2e/ 1000 INR",
+            "TWh",
+            "TWh",
+            "%",
+            "Mtoe",
+            "Million tonne CO2e",
+            "tonne CO2e per person",
+            "kg CO2e/ 1000 INR",
+            "MJ/INR",
+            "kg CO2e/person",
+            "toe/person",
+            "GW",
+            "%",
+            "Hectares",
+            "Billion Litres",
+            "Billion INR",
+            "Billion INR",
+            "Billion INR",
+            "Billion INR",
+            "Mtoe",
+            "Mtoe",
+            "Mtoe",
+            "Mtoe",
+            "Mtoe",
+            "Mtoe"
+        ],
+        "Named Range": [
+            "output.energy.demand",
+            "output.energy.supply",
+            "output.energy.import.dependence",
+            "output.gdp.pcemissions",
+            "output.electricity.demand",
+            "output.electricity.supply",
+            "output.energy.import.dependence",
+            "output.energy.imports",
+            "output.ghg.totalemissions",
+            "output.ghg.pcemissions",
+            "output.gdp.pcemissions",
+            "output.energy.intensity",
+            "output.pcemissions",
+            "output.percapitasupply",
+            "output.capacity",
+            "output.electrification",
+            "output.land",
+            "output.water",
+            "output.import.cost",
+            "output.total.energy.cost",
+            "output.power.cost.capex",
+            "output.power.cost",
+            "output.flows.two",
+            "output.flows.three",
+            "output.flows.four",
+            "output.flows.five",
+            "output.flows.six",
+            "output.flows.seven"
+        ],
+        "Graph Type": [
+            "stacked Area with overlying Line(s)",
+            "stacked Area with overlying Line(s)",
+            "Line",
+            "bar_graphing",
+            "stacked Area with overlying Line(s)",
+            "stacked Area with overlying Line(s)",
+            "Line",
+            "stacked Area with overlying Line(s)",
+            "stacked Area with overlying Line(s)",
+            "bar_graphing",
+            "bar_graphing",
+            "bar_graphing",
+            "bar_graphing",
+            "bar_graphing",
+            "stacked Area with overlying Line(s)",
+            "bar_graphing",
+            "stacked Area with overlying Line(s)",
+            "stacked Area with overlying Line(s)",
+            "stacked Area with overlying Line(s)",
+            "stacked Area with overlying Line(s)",
+            "bar_stacked",
+            "stacked Area with overlying Line(s)",
+            "Sankey/Flow",
+            "Sankey/Flow",
+            "Sankey/Flow",
+            "Sankey/Flow",
+            "Sankey/Flow",
+            "Sankey/Flow"
+        ],
+        "Y axis min": [
+            0,
+            -1000,
+            0,
+            -100,
+            0,
+            -2500,
+            0,
+            -25000,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            -25000,
+            0,
+            -1000,
+            0,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+        ],
+        "Y axis max": [
+            100000,
+            250000,
+            100,
+            100,
+            10000,
+            10000,
+            100,
+            150000,
+            12000,
+            10,
+            100,
+            100,
+            10,
+            5,
+            3000,
+            100,
+            1000000,
+            10000,
+            125000,
+            200000,
+            500000,
+            500000,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+        ]
+    },
+    "example_pathways": {
+        "Least Effort Scenario (All Level 1)": [
+            3,
+            2,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+        ],
+        "Determined Effort Scenario (All Level 2)": [
+            3,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+        ],
+        "Heroic Effort Scenario (All Level 3)": [
+            3,
+            2,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3
+        ],
+        "Aggressive Effort Scenario (All Level 4)": [
+            3,
+            2,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4
+        ],
+        "Net-zero Scenario-1": [
+            3,
+            2,
+            2,
+            3,
+            2,
+            2,
+            3,
+            3,
+            3,
+            2,
+            3,
+            3,
+            3,
+            3,
+            3,
+            2,
+            3,
+            3,
+            2,
+            2,
+            2,
+            2,
+            3,
+            2,
+            3,
+            3,
+            2,
+            2,
+            3,
+            2,
+            3,
+            3,
+            2,
+            1,
+            2,
+            3,
+            2,
+            3,
+            2,
+            3,
+            3,
+            2
+        ]
+    },
+    "output_lever_names_grouped": {
+        "GDP": {
+            "names": [
+                "GDP"
+            ],
+            "tooltips": [
+                [
+                    "GDP"
+                ]
+            ]
+        },
+        "Renewable and Clean Energy": {
+            "names": [
+                "Solar Photovoltaic  ",
+                "Concentrated Solar Power  ",
+                "Distributed PV",
+                "Onshore Wind ",
+                "Offshore Wind ",
+                "Nuclear Power Stations",
+                "Large Hydro Power Stations ",
+                "Small Hydro Power Stations "
+            ],
+            "tooltips": [
+                [
+                    "Solar Photovoltaic"
+                ],
+                [
+                    "Concentrated Solar Power"
+                ],
+                [
+                    "Distributed PV"
+                ],
+                [
+                    "Onshore Wind"
+                ],
+                [
+                    "Offshore Wind"
+                ],
+                [
+                    "Nuclear Power Stations"
+                ],
+                [
+                    "Large Hydro Power Stations "
+                ],
+                [
+                    "Small Hydro Power Stations"
+                ]
+            ]
+        },
+        "Conventional Energy": {
+            "names": [
+                "Gas Power Stations",
+                "Coal Power Stations Mix",
+                "CCS Power Stations "
+            ],
+            "tooltips": [
+                [
+                    "Gas Power Stations"
+                ],
+                [
+                    "Coal Power Stations Mix"
+                ],
+                [
+                    "CCS Power Stations"
+                ]
+            ]
+        },
+        "Bioenergy": {
+            "names": [
+                "Biomass to Electricity",
+                "1st and 2nd generation biofuel blending ",
+                "3rd generation biofuels",
+                "Energy from Waste"
+            ],
+            "tooltips": [
+                [
+                    "Biomass to Electricity"
+                ],
+                [
+                    "1st and 2nd generation biofuel blending "
+                ],
+                [
+                    "3rd generation biofuels "
+                ],
+                [
+                    "Energy from Waste"
+                ]
+            ]
+        },
+        "Grid": {
+            "names": [
+                "T and D Losses",
+                "Electricity Trade"
+            ],
+            "tooltips": [
+                [
+                    "T and D Losses"
+                ],
+                [
+                    "Electricity Trade"
+                ]
+            ]
+        },
+        "Cost": {
+            "names": [
+                "Cost"
+            ],
+            "tooltips": [
+                [
+                    "Cost"
+                ]
+            ]
+        },
+        "Agriculture": {
+            "names": [
+                "Energy Demand for Tractors",
+                "Fuel Split for Pumps"
+            ],
+            "tooltips": [
+                [
+                    "Energy Demand for Tractors"
+                ],
+                [
+                    "Fuel Split for Pumps"
+                ]
+            ]
+        },
+        "Telecom": {
+            "names": [
+                "Shift to Electricity from Diesel for Telecom Towers"
+            ],
+            "tooltips": [
+                [
+                    "Shift to Electricity from Diesel for Telecom Towers"
+                ]
+            ]
+        },
+        "Transport": {
+            "names": [
+                "Passenger Transport Demand ",
+                "Passenger Transport Mode",
+                "Shift to Mass Transit ",
+                "Electric and Fuel Cell Vehicles",
+                "Freight Transport Demand",
+                "Freight Transport Mode"
+            ],
+            "tooltips": [
+                [
+                    "Passenger Transport Demand"
+                ],
+                [
+                    "Passenger Transport Mode"
+                ],
+                [
+                    "Shift to Mass Transit"
+                ],
+                [
+                    "Electric and Fuel Cell Vehicles"
+                ],
+                [
+                    "Freight Transport Demand"
+                ],
+                [
+                    "Freight Transport Mode"
+                ]
+            ]
+        },
+        "Industry": {
+            "names": [
+                "Energy Intensity of Industry ",
+                "Fuel Mix of Industry sector",
+                "Fuel Switching Choices for Cement  ",
+                "Fuel Switching Choices for Steel "
+            ],
+            "tooltips": [
+                [
+                    "Energy Intensity of Industry"
+                ],
+                [
+                    "Fuel Mix of Industry sector"
+                ],
+                [
+                    "Fuel Switching Choices for Cement "
+                ],
+                [
+                    "Fuel Switching Choices for Steel"
+                ]
+            ]
+        },
+        "Buildings": {
+            "names": [
+                "Growth of households",
+                "Share of economic categories",
+                "Growth of energy footprint",
+                "Commercial- Growth of Floor Space",
+                "Commercial - Share of ACs",
+                "Commercial - ECBC Compliance"
+            ],
+            "tooltips": [
+                [
+                    "Growth of households"
+                ],
+                [
+                    "Share of economic categories"
+                ],
+                [
+                    "Growth of energy footprint"
+                ],
+                [
+                    "Commercial- Growth of Floor Space"
+                ],
+                [
+                    "Commercial - Share of ACs"
+                ],
+                [
+                    "Commercial - ECBC Compliance"
+                ]
+            ]
+        },
+        "Cooking": {
+            "names": [
+                "Fuel Shift and Cookstove Efficiency "
+            ],
+            "tooltips": [
+                [
+                    "Fuel Shift and Cookstove Efficiency"
+                ]
+            ]
+        },
+        "Fossil Fuel Production": {
+            "names": [
+                "Domestic Gas Production",
+                "Domestic Coal Production",
+                "Domestic Oil Production"
+            ],
+            "tooltips": [
+                [
+                    "Domestic Gas Production"
+                ],
+                [
+                    "Domestic Coal Production"
+                ],
+                [
+                    "Domestic Oil Production"
+                ]
+            ]
+        }
+    }
+}

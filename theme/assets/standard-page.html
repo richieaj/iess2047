@@ -1,0 +1,278 @@
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet" rel="preload" as="font"
+  crossorigin="anonymous">
+
+<div class="structure">
+  <div class="app-bar" anvil-drop-container=".anvil-container" anvil-drop-redirect=".placeholder">
+    <img class="nitiaayog-logo" src="_/theme/NITI_AAyog-smallest.png">
+    <img class="project-logo" src="_/theme/ICSS-logo-small.png">
+    <img class="iitb-logo" src="_/theme/iitb.png">
+    <a  style="display: none;" class="sidebar-toggle" anvil-if-slot-empty="top-left-btn" anvil-hide-if-slot-empty="left-nav"
+      anvil-drop-slot="top-left-btn" href="javascript:void(0)"><i class="fa fa-bars"></i></a>
+    <div class="title" anvil-slot="title"  style="display: none;">
+      <div class="placeholder anvil-designer-only" anvil-if-slot-empty="title" anvil-drop-here>Test</div>
+    </div>
+    
+    <div class="app-bar-nav" anvil-slot="nav-right" style="display: none;">
+      <div class="placeholder anvil-designer-only" anvil-if-slot-empty="nav-right" anvil-drop-here>Drop a FlowPanel here
+      </div>
+    </div>
+    <!-- <div style="clear:both"></div> -->
+  </div>
+
+  <div class="nav-holder">
+    <div class="left-nav anvil-measure-this" anvil-slot-repeat="left-nav" anvil-drop-container=">.anvil-container">
+    </div>
+    <div class="left-nav-placeholder anvil-designer-only" anvil-if-slot-empty="left-nav" anvil-drop-slot="left-nav">
+      <div class="prompt">To add a sidebar, drop a ColumnPanel here.</div>
+    </div>
+
+    <div class="content">
+      <div class="landing_screen"></div>
+      <div class="video_screen"></div>
+      <div anvil-slot-repeat="default" class="anvil-measure-this"></div>
+
+      <div class="placeholder drop-here" anvil-if-slot-empty="default" anvil-drop-slot="default">Drop a ColumnPanel
+        here.</div>
+    </div>
+  </div>
+  <div class="nav-shield"></div>
+  <div class="footer-anvil-iess">
+    <div style="font-weight: bold;">&copy 2023 NITI AAYOG | DESE IIT BOMBAY |<span style="font-size:smaller;"> (Best viewed in 1920 x 1080
+        resolution, scale: 100%)</span>|DOWNLOADS: <span><a href="_/theme/documents/IESS_v3_one_pagers.pdf" target="_blank">ONE PAGER DOCS</a></span> | <span><a href="_/theme/documents/IESS2047_Version_3.0.xlsx" target="_blank">IESS V3.0 EXCEL</a></span> | <span><a href="#" id="video_enabler_btn">VIDEO</a></span><!--| <span><a href="_/theme/documents/IESS_v3_Detailed_Documentation.pdf">IESS V3 Detailed Documentation</a></span> --><span>&emsp;&emsp;Feedback: <a href="mailto:iess-niti@gov.in">iess-niti@gov.in</a></span>
+      </div>
+  </div>  
+</div>
+<div anvil-drop-default anvil-drop-redirect=".placeholder" anvil-drop-container=".anvil-container"></div>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-E3D07CE36S"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-E3D07CE36S');
+</script>
+
+<script>
+  //Global declarations
+  var pkrsvt_container;
+  var jxoyrh_div_div_container;
+  function hideSidebar() {
+    var ln = $('.structure > .nav-holder > .left-nav');
+    ln.animate({ left: -ln.outerWidth() }, function () {
+      ln.removeClass("in-transition shown").addClass("hidden");
+      $('.nav-shield').removeClass("shown");
+      $(window).trigger('resize');
+    });
+  }
+  function showSidebar() {
+    var ln = $('.structure > .nav-holder > .left-nav');
+    $('.nav-shield').addClass("shown");
+    ln.addClass("shown").removeClass("hidden").css({ left: "-100%" }).css({ left: -ln.outerWidth() }).animate({ left: 0 }, function () {
+      ln.removeClass("in-transition");
+    });
+    $(window).trigger('resize');
+  }
+  $('.sidebar-toggle, .nav-shield').off('click').on('click', function () {
+    var ln = $('.structure > .nav-holder > .left-nav');
+    if (ln.is(":visible") || $('.nav-shield').is(".shown")) {
+      hideSidebar();
+    } else if (!ln.is(":empty")) {
+      showSidebar();
+    }
+  });
+  $('.left-nav').off('click').on('click', 'a, button', function () {
+    if ($('.nav-shield').is(":visible")) {
+      $('.nav-shield').trigger('click');
+    }
+  });
+  //Normalize the sizing of the containers
+  function normalize_width() {
+    var pkrsvt_container = document.querySelector(".anvil-panel-col-PKRSVT");
+    var jxoyrh_div_div_container = document.querySelector(".anvil-panel-col-JXOYRH");
+    // return (pkrsvt_container.clientWidth - 20)
+    return (jxoyrh_div_div_container.clientWidth - 20)
+  }
+  function normalize_height() {
+    var jxoyrh_div_div_container = document.querySelector(".anvil-panel-col-JXOYRH");
+    return (jxoyrh_div_div_container.clientHeight)
+  }
+  function window_width_getter() {
+    return window.innerWidth;
+  }
+  function window_height_getter() {
+    return window.innerHeight;
+  }
+  function grid_changer(graph_quant, graph_height, case_id) {
+    var widthLimit = 1400;
+    var heightLimit = 900;
+
+    var role_the_graphs = document.querySelector('.anvil-role-the_graphs');
+    var pkrsvt_container = document.querySelector(".anvil-panel-col-PKRSVT");
+    var jxoyrh_div_div_container = document.querySelector(".anvil-panel-col-JXOYRH > div > div");
+    var absolute_tab_height = role_the_graphs.getClientRects()[0].top - pkrsvt_container.getClientRects()[0].top;
+    role_the_graphs.style.backgroundColor = "beige";
+    role_the_graphs.style.display = "grid";
+    graph_height = graph_height - 10;
+
+    if (case_id == 1) { // case 1
+      role_the_graphs.style.backgroundColor = "rgba(216, 252, 255, 0.466)";
+      if (graph_quant === 1) {
+        role_the_graphs.style.gridTemplateColumns = "1fr";
+        role_the_graphs.style.gridTemplateRows = graph_height + "px";
+      }
+      else if (graph_quant === 2) {
+        role_the_graphs.style.gridTemplateColumns = "1fr";
+        role_the_graphs.style.gridAutoRows = graph_height + "px";
+      }
+
+      else if (graph_quant === 3) {
+        role_the_graphs.style.gridTemplateColumns = "1fr";
+        role_the_graphs.style.gridAutoRows = graph_height + "px";
+      }
+      else if (graph_quant === 4) {
+        role_the_graphs.style.gridTemplateColumns = "1fr";
+        role_the_graphs.style.gridAutoRows = graph_height + "px";
+      }
+    }
+    else if (case_id == 2) { // case 2 (more width but no height)
+      role_the_graphs.style.backgroundColor = "rgba(231, 145, 248, 0.274)";
+      if (graph_quant === 1) {
+        role_the_graphs.style.gridTemplateColumns = "1fr";
+        role_the_graphs.style.gridAutoRows = graph_height + "px";
+      }
+      else if (graph_quant === 2) {
+        role_the_graphs.style.height = "max-content";
+        role_the_graphs.style.gridTemplateColumns = "1fr 1fr";
+        role_the_graphs.style.gridAutoRows = graph_height + "px";
+      }
+      else if (graph_quant === 3) {
+        role_the_graphs.style.gridTemplateColumns = "1fr 1fr 1fr";
+        role_the_graphs.style.gridAutoRows = graph_height + "px";
+      }
+      else if (graph_quant === 4) {
+        role_the_graphs.style.gridTemplateColumns = "1fr 1fr";
+        role_the_graphs.style.gridAutoRows = graph_height + "px";
+      }
+    }
+    else if (case_id == 3) { // case 3 (less width more height)
+      role_the_graphs.style.backgroundColor = "rgba(248, 181, 115, 0.274)";
+      if (graph_quant === 1) {
+        role_the_graphs.style.gridTemplateColumns = "1fr";
+        role_the_graphs.style.gridTemplateRows = graph_height + "px";
+      }
+      else if (graph_quant === 2) {
+        role_the_graphs.style.gridTemplateColumns = "1fr";
+        role_the_graphs.style.gridTemplateRows = (graph_height / 2) + "px";
+      }
+
+      else if (graph_quant === 3) {
+        role_the_graphs.style.gridTemplateColumns = "1fr";
+        role_the_graphs.style.gridTemplateRows = (graph_height / 2) + "px";
+      }
+
+      else if (graph_quant === 4) {
+        role_the_graphs.style.gridTemplateColumns = "1fr";
+        role_the_graphs.style.gridAutoRows = (graph_height / 2) + "px";
+      }
+    }
+    else if (case_id == 4) { // case 4 ( Best Resolution)
+      role_the_graphs.style.backgroundColor = "rgba(170, 249, 157, 0.194)";
+      if (graph_quant === 1) {
+        role_the_graphs.style.gridTemplateColumns = "1fr";
+        role_the_graphs.style.gridTemplateRows = graph_height + "px";
+      }
+      else if (graph_quant === 2) {
+        role_the_graphs.style.gridTemplateColumns = "1fr 1fr";
+        role_the_graphs.style.gridTemplateRows = graph_height + "px";
+      }
+
+      else if (graph_quant === 3) {
+        role_the_graphs.style.gridTemplateColumns = "1fr 1fr 1fr";
+        role_the_graphs.style.gridTemplateRows = graph_height + "px";
+      }
+
+      else if (graph_quant === 4) {
+        role_the_graphs.style.gridTemplateColumns = "1fr 1fr";
+        role_the_graphs.style.gridTemplateRows = ((graph_height) / 2) + "px";
+      }
+    }
+  }
+
+  $(document).ready(function () {
+    //Video Lander
+    let video_loc = `<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/Nq4WkV0EJts?si=XNc6iJ7JYx-QkCuS" title="IESS Launch Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
+    let video_enabler = document.querySelector("#video_enabler_btn");
+    video_enabler.addEventListener("click",(e)=>{
+       let video_enable = true;
+      var video_screen = document.querySelector(".video_screen");
+      video_screen.style.display = "grid";
+      if (video_enable) {
+        video_screen.innerHTML = video_loc;
+        video_screen.addEventListener('click', (e) => {
+          video_screen.style.display = "none";
+        })
+      }
+    })
+// End of the video program
+    var pkrsvt_container = document.querySelector(".anvil-panel-col-PKRSVT");
+    var jxoyrh_container = document.querySelector(".anvil-panel-col-JXOYRH");
+    var jxoyrh_div_div_container = document.querySelector(".anvil-panel-col-JXOYRH > div > div");
+    var role_the_graphs = document.querySelector('.anvil-role-the_graphs');
+    var absolute_tab_height = jxoyrh_container.getClientRects()[0].top - pkrsvt_container.getClientRects()[0].top;
+    jxoyrh_container.style.height = (pkrsvt_container.clientHeight - absolute_tab_height).toString() + "px";
+    jxoyrh_div_div_container.style.height = (pkrsvt_container.clientHeight) + "px";
+
+
+    //Custom CSS codes
+    var holder_full = document.querySelector(".anvil-panel-row-GYKMWG");
+    var holder_left = document.querySelector(".anvil-panel-col-BITUCV");
+    var pkrsvt_container = document.querySelector(".anvil-panel-col-PKRSVT");
+    var curtain_key = document.querySelector(".anvil-role-curtain_maker");
+    var panel_closer = document.querySelector(".anvil-role-panel_closer button");
+
+    if(window.innerWidth >= 1310){
+      
+      curtain_key.innerHTML = "<div>></div>";
+      holder_left.style.width = "50px"
+      holder_full.style.gridTemplateColumns = "50px 1fr";
+
+      holder_left.addEventListener('click', () => {
+        curtain_key.style.opacity = 0;
+        holder_left.style.width = "390px"
+        holder_left.style.overflow = "auto"
+        pkrsvt_container.style.transform = "translateX(340px)"
+        curtain_key.style.display = "none";
+      });
+
+      panel_closer.addEventListener('click', () => {
+        curtain_key.style.opacity = 1;
+        curtain_key.style.display = "grid";
+        holder_left.style.overflow = "hidden"
+        holder_full.style.gridTemplateColumns = "50px 1fr";
+        holder_left.style.transform = "translateX(0)"
+        holder_left.style.width = "50px"
+        pkrsvt_container.style.transform = "translateX(0)"
+      });
+    }
+    else{
+      curtain_key.style.display = "none";
+      panel_closer.style.display = "none";
+     
+    }
+    //landing screen
+    var test_mode = false;
+
+    var landing_screen = document.querySelector(".landing_screen");
+    var footer_control = document.querySelector(".footer-anvil-iess");
+    if (test_mode){
+      landing_screen.innerHTML = "<div align=center>Welcome to IESS 2047 Version 3.0</div>";
+      landing_screen.style.fontSize = "40px";
+      footer_control.style.display = "none";
+    }
+    else{
+      landing_screen.style.display = "none";
+      footer_control.style.display = "grid";
+    }
+  });
+</script>
