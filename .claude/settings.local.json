@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pip show *)",
+      "Bash(where anvil-app-server *)",
+      "Bash(pip3 show *)"
+    ]
+  }
+}
