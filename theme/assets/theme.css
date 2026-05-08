@@ -1,240 +1,109 @@
 /**
- This CSS implements the Material Design look and feel for Anvil apps.
- **/
+ * IESS 2047 – Clean Light Theme
+ * Inter font · Indigo primary · Amber accent · Pure white graphs
+ */
 
-/* Stop panel-cols cutting off drop shadows */
-.anvil-panel-col {
-  padding-bottom: 10px;
-  margin-bottom: -10px;
-}
-.sankey .node-label-text-path {
-    text-shadow: none;
-    fill: #000 !important;
-    font-size: 14px !important;
-    font-weight: bold;
-}
-.content>.placeholder {
-  margin: 5px;
-  color: rgb(235, 235, 235);
-  font-size: 18px;
-  outline: 1px dotted;
-  padding: 5px;
-  text-align: center;
-}
+/* ─── Google Fonts ─────────────────────────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
-/* Put things on a 4px grid (none of this 7px nonsense) */
-.has-text .anvil-component-icon.left-icon {
-  margin-right: 8px;
-}
+/* ─── Anvil spacing resets ─────────────────────────────────────────────────── */
+.anvil-panel-col { padding-bottom: 10px; margin-bottom: -10px; }
 
-.has-text .anvil-component-icon.right-icon {
-  margin-left: 8px;
-}
+.has-text .anvil-component-icon.left-icon  { margin-right: 8px; }
+.has-text .anvil-component-icon.right-icon { margin-left:  8px; }
 
-a>.anvil-component-icon.left_edge-icon,
-a>.anvil-component-icon.right_edge-icon,
-.anvil-label>.anvil-component-icon.left_edge-icon,
-.anvil-label>.anvil-component-icon.right_edge-icon {
-  padding-top: 8px;
-  padding-bottom: 8px;
-}
+a > .anvil-component-icon.left_edge-icon,
+a > .anvil-component-icon.right_edge-icon,
+.anvil-label > .anvil-component-icon.left_edge-icon,
+.anvil-label > .anvil-component-icon.right_edge-icon { padding-top: 8px; padding-bottom: 8px; }
 
-.anvil-label>.label-text,
-a>.link-text {
-  padding-top: 8px;
-  padding-bottom: 8px;
-}
+.anvil-label > .label-text,
+a > .link-text { padding-top: 8px; padding-bottom: 8px; }
 
-.file-loader>label {
-  padding: 8px;
-}
+.file-loader > label { padding: 8px; }
 
 .checkbox label,
-.radio label {
-  padding-top: 8px;
-  padding-right: 8px;
-  padding-bottom: 8px;
+.radio    label { padding: 8px 8px 8px 0; }
+
+/* spacing utilities */
+.anvil-spacing-above-none   { margin-top: 0; }
+.anvil-spacing-above-small  { margin-top: 0; }
+.anvil-spacing-above-medium { margin-top: 8px; }
+.anvil-spacing-above-large  { margin-top: 16px; }
+.anvil-spacing-below-none   { margin-bottom: 0; }
+.anvil-spacing-below-small  { margin-bottom: 0; }
+.anvil-spacing-below-medium { margin-bottom: 8px; }
+.anvil-spacing-below-large  { margin-bottom: 16px; }
+
+/* column-panel padding variants */
+.col-padding.col-padding-tiny   { padding: 0 2px; }
+.col-padding.col-padding-small  { padding: 0 4px; }
+.col-padding.col-padding-medium,
+.col-padding.col-padding-large,
+.col-padding.col-padding-huge   { padding: 0; }
+
+.column-panel.col-padding-tiny   > .anvil-panel-section > .anvil-panel-section-container > .anvil-panel-section-gutter,
+.column-panel.col-padding-small  > .anvil-panel-section > .anvil-panel-section-container > .anvil-panel-section-gutter,
+.column-panel.col-padding-medium > .anvil-panel-section > .anvil-panel-section-container > .anvil-panel-section-gutter,
+.column-panel.col-padding-large  > .anvil-panel-section > .anvil-panel-section-container > .anvil-panel-section-gutter,
+.column-panel.col-padding-huge   > .anvil-panel-section > .anvil-panel-section-container > .anvil-panel-section-gutter { margin: 0; }
+
+.flow-panel.flow-spacing-tiny   > .flow-panel-gutter,
+.flow-panel.flow-spacing-small  > .flow-panel-gutter,
+.flow-panel.flow-spacing-medium > .flow-panel-gutter,
+.flow-panel.flow-spacing-large  > .flow-panel-gutter,
+.flow-panel.flow-spacing-huge   > .flow-panel-gutter { margin: 0; }
+
+.flow-panel.flow-spacing-tiny   > .flow-panel-gutter > .flow-panel-item,
+.flow-panel.flow-spacing-small  > .flow-panel-gutter > .flow-panel-item,
+.flow-panel.flow-spacing-medium > .flow-panel-gutter > .flow-panel-item,
+.flow-panel.flow-spacing-large  > .flow-panel-gutter > .flow-panel-item,
+.flow-panel.flow-spacing-huge   > .flow-panel-gutter > .flow-panel-item { margin: 0; }
+
+/* ─── CSS Design Tokens ────────────────────────────────────────────────────── */
+:root {
+  --primary:       #3730a3;   /* indigo-700  */
+  --primary-dark:  #1e1b4b;   /* indigo-950  */
+  --primary-mid:   #4f46e5;   /* indigo-600  */
+  --primary-light: #e0e7ff;   /* indigo-100  */
+  --accent:        #f59e0b;   /* amber-500   */
+  --accent-dark:   #d97706;   /* amber-600   */
+  --surface:       #ffffff;
+  --surface-alt:   #f8fafc;
+  --border:        rgba(15, 23, 42, 0.09);
+  --border-mid:    rgba(15, 23, 42, 0.14);
+  --shadow-sm:     0 1px 3px rgba(15,23,42,0.08), 0 1px 2px rgba(15,23,42,0.04);
+  --shadow-md:     0 4px 12px rgba(15,23,42,0.10), 0 2px 4px rgba(15,23,42,0.06);
+  --shadow-lg:     0 8px 24px rgba(15,23,42,0.12), 0 3px 6px rgba(15,23,42,0.06);
+  --text-primary:  #0f172a;
+  --text-muted:    #64748b;
+  --radius:        6px;
+  --radius-lg:     10px;
 }
 
-.anvil-spacing-above-none {
-  margin-top: 0px;
-}
-
-.anvil-spacing-above-small {
-  /* margin-top: 4px; */
-  margin-top: 0;
-}
-
-.anvil-spacing-above-medium {
-  margin-top: 8px;
-}
-
-.anvil-spacing-above-large {
-  margin-top: 16px;
-}
-
-.anvil-spacing-below-none {
-  margin-bottom: 0px;
-}
-
-.anvil-spacing-below-small {
-  /* margin-bottom: 4px; */
-  margin-bottom: 0;
-}
-
-.anvil-spacing-below-medium {
-  margin-bottom: 8px;
-}
-
-.anvil-spacing-below-large {
-  margin-bottom: 16px;
-}
-
-
-.col-padding.col-padding-tiny {
-  padding: 0 2px;
-}
-
-.column-panel.col-padding-tiny>.anvil-panel-section>.anvil-panel-section-container>.anvil-panel-section-gutter {
-  margin: 0;
-}
-
-.col-padding.col-padding-small {
-  padding: 0 4px;
-}
-
-.column-panel.col-padding-small>.anvil-panel-section>.anvil-panel-section-container>.anvil-panel-section-gutter {
-  margin: 0;
-}
-
-.col-padding.col-padding-medium {
-  padding: 0;
-}
-
-.column-panel.col-padding-medium>.anvil-panel-section>.anvil-panel-section-container>.anvil-panel-section-gutter {
-  margin: 0;
-}
-
-.col-padding.col-padding-large {
-  padding: 0;
-}
-
-.column-panel.col-padding-large>.anvil-panel-section>.anvil-panel-section-container>.anvil-panel-section-gutter {
-  margin: 0;
-}
-
-.col-padding.col-padding-huge {
-  padding: 0;
-}
-
-.column-panel.col-padding-huge>.anvil-panel-section>.anvil-panel-section-container>.anvil-panel-section-gutter {
-  margin: 0;
-}
-
-.flow-panel.flow-spacing-tiny>.flow-panel-gutter {
-  margin: 0;
-}
-
-.flow-panel.flow-spacing-tiny>.flow-panel-gutter>.flow-panel-item {
-  margin: 0;
-}
-
-.flow-panel.flow-spacing-small>.flow-panel-gutter {
-  margin: 0;
-}
-
-.flow-panel.flow-spacing-small>.flow-panel-gutter>.flow-panel-item {
-  margin: 0;
-}
-
-.flow-panel.flow-spacing-medium>.flow-panel-gutter {
-  margin: 0;
-}
-
-.flow-panel.flow-spacing-medium>.flow-panel-gutter>.flow-panel-item {
-  margin: 0;
-}
-
-.flow-panel.flow-spacing-large>.flow-panel-gutter {
-  margin: 0;
-}
-
-.flow-panel.flow-spacing-large>.flow-panel-gutter>.flow-panel-item {
-  margin: 0;
-}
-
-.flow-panel.flow-spacing-huge>.flow-panel-gutter {
-  margin: 0;
-}
-
-.flow-panel.flow-spacing-huge>.flow-panel-gutter>.flow-panel-item {
-  margin: 0;
-}
-
-
-/* Typography */
+/* ─── Base typography ──────────────────────────────────────────────────────── */
 body {
-  font-family: Roboto, Noto, Arial, sans-serif;
-  font-size: 14px;
-  background-color: #ffffff;
+  font-family: Inter, 'Helvetica Neue', Roboto, Arial, sans-serif;
+  font-size: 13.5px;
+  background-color: #f1f5f9;
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
 }
 
-@media print {
-  body {
-    background-color: white;
-  }
-}
+@media print { body { background-color: white; } }
 
-a,
-a:focus {
-  text-decoration: none;
-  color: %color:Primary 700%;
-}
+a, a:focus { text-decoration: none; color: var(--primary-mid); }
+a:hover, a:active { color: var(--primary); }
 
-a:hover,
-a:active {
-  color: %color:Primary 500%;
-}
+.anvil-role-subheading       { font-size: 15px; line-height: 22px; font-weight: 500; }
+.anvil-role-padded-subheading{ font-size: 15px; line-height: 22px; padding-left: 15px; }
+.anvil-role-headline         { font-size: 22px; line-height: 30px; font-weight: 600; }
+.anvil-role-input-prompt     { font-size: 15px; line-height: 1.5; }
+.anvil-role-text             { font-size: 13.5px; }
+.anvil-role-text > .label-text,
+.anvil-role-text .link-text  { padding-top: 0; padding-bottom: 0; }
 
-.anvil-role-subheading {
-  font-size: 16px;
-  line-height: 24dp;
-}
-
-.anvil-role-padded-subheading {
-  font-size: 16px;
-  line-height: 24dp;
-  padding-left: 15px;
-}
-
-.anvil-role-headline {
-  font-size: 24px;
-  line-height: 32px;
-}
-
-.anvil-role-input-prompt {
-  font-size: 16px;
-  line-height: 1.5;
-}
-
-.anvil-role-display-4 {
-  font-size: 112px;
-  font-weight: light;
-}
-
-.anvil-role-text {
-  font-size: 14px;
-}
-
-.anvil-role-text>.label-text,
-.anvil-role-text .link-text {
-  padding-top: 0;
-  padding-bottom: 0;
-}
-
-/* ---------------------Start of custom design */
-
-/* Page structure: App bar with optional left nav */
+/* ─── Page grid structure ──────────────────────────────────────────────────── */
 .structure {
   display: grid;
   position: relative;
@@ -243,55 +112,57 @@ a:active {
   box-sizing: border-box !important;
   row-gap: 5px;
   column-gap: 5px;
-
 }
 
-/* However, this breaks the designer's height measurement. IE isn't supported for the designer, so set it back. */
+/* ─── App bar ──────────────────────────────────────────────────────────────── */
 .app-bar {
   display: grid;
   position: relative;
   grid-column: 1 / -1;
   grid-template-columns: 1fr 1fr 1fr;
-  place-items:  center;
+  place-items: center;
   column-gap: 10px;
   height: 60px;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+  box-shadow: var(--shadow-md);
+  z-index: 200;
 }
 
 .project-logo {
   place-self: center;
-  height: 60px;
+  height: 52px;
   object-fit: contain;
-  background-color: transparent;
+  background: transparent;
+  filter: brightness(0) invert(1);
+  opacity: 0.96;
 }
 
 .nitiaayog-logo {
-  place-self: start;
-  height: 60px;
+  place-self: center start;
+  height: 52px;
   object-fit: contain;
-  background-color: transparent;
+  background: transparent;
+  padding-left: 8px;
+  filter: brightness(0) invert(1);
+  opacity: 0.96;
 }
+
 .iitb-logo {
   display: grid;
   place-items: end;
-  height: 60px;
-  padding-top: 5px;
-  padding-right: 10px;
-  background-color: transparent;
-  place-self: end;
-}
-.title {
-  display: none;
-  /* place-items: center; */
-  height: 100%;
-  
+  height: 52px;
+  padding-top: 4px;
+  padding-right: 12px;
+  background: transparent;
+  place-self: center end;
+  filter: brightness(0) invert(1);
+  opacity: 0.96;
 }
 
+.title { display: none; height: 100%; }
+.title > div > span { font-size: 28px; color: white; font-weight: 700; }
 
-.title>div>span {
-  font-size: 32px;
-}
-
+/* ─── Nav holder ───────────────────────────────────────────────────────────── */
 .nav-holder {
   display: grid;
   position: relative;
@@ -310,167 +181,239 @@ a:active {
   margin: 0 auto;
   padding: 0 !important;
   box-sizing: border-box !important;
-  /* border: solid 1px red; */
   height: fit-content;
-  /* flex: 1; */
-  /* overflow-x: scroll; */
 }
 
-.anvil-panel-col {
-  pointer-events: all;
-}
+.anvil-panel-col { pointer-events: all; }
 
-/* Main Holder Panel */
+/* ─── Main holder panel (lever panel + graph panel) ────────────────────────── */
 .anvil-panel-row-GYKMWG {
   position: relative;
   display: grid;
-  /* grid-template-columns: minmax(min-content, 390px) 1fr; */
-  /* transform: translateX(390px); */
   grid-template-columns: 80px 1fr;
   transition: all 150ms ease-in-out;
   grid-template-rows: 1fr;
-  border-radius: 4px;
+  border-radius: var(--radius);
   padding: 0 !important;
-  column-gap: 4px;
+  column-gap: 6px;
   row-gap: 5px;
-  height: calc(100vh - (100px));
+  height: calc(100vh - 100px);
   box-sizing: border-box !important;
   overflow: auto;
   pointer-events: all;
-  
 }
-
-
-
 
 .anvil-role-2050,
-.anvil-role-2100 {
-  padding: 0 !important;
-  margin: 0 !important;
-}
+.anvil-role-2100 { padding: 0 !important; margin: 0 !important; }
 
+/* ─── Lever category headers ───────────────────────────────────────────────── */
 .anvil-role-category_section {
   display: grid;
-  background-color: rgba(173, 216, 230, 0.396);
+  background: linear-gradient(90deg, var(--primary-light) 0%, #dde4ff 100%);
   place-content: center;
-  height: 20px !important;
-  margin-bottom: 5px;
-  color: black;
-  font-weight: bolder;
+  height: 22px !important;
+  margin-bottom: 4px;
+  color: var(--primary);
+  font-weight: 700;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
   overflow-y: hidden;
-  border-radius: 5px;
+  border-radius: var(--radius);
+  border-left: 3px solid var(--primary-mid);
 }
 
-/* Repeating Panel */
-/* Desktop: Nav bar pinned */
-/* Lever Panel */
+/* ─── Lever panel ──────────────────────────────────────────────────────────── */
 .anvil-panel-col-BITUCV {
-  background-color: white;
-  border-radius: 4px;
+  background-color: var(--surface);
+  border-radius: var(--radius-lg);
   box-sizing: border-box;
   overflow: hidden;
   height: calc(100% - 2px);
   padding: 0;
   margin: 0;
   transition: all 150ms ease-in-out;
-  border: solid 1px rgba(76, 209, 14, 0.459);
-  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-md);
   z-index: 100;
 }
 
-
-.anvil-panel-col-BITUCV > *{
-  /* background-color: red; */
+/* Curtain / panel expand button */
+.anvil-role-curtain_maker {
+  display: grid;
+  opacity: 1;
+  background: linear-gradient(180deg, var(--primary) 0%, var(--primary-dark) 100%);
+  position: absolute;
+  z-index: 1000;
+  top: 0; bottom: 0; left: 0; right: 0;
+  height: 100vh;
+  transition: all 150ms ease;
+  place-content: center;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.9);
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  border-radius: 0 var(--radius) var(--radius) 0;
 }
-/* Blanker Code */
-.anvil-panel-col-BITUCV .holder_left_blanker {
-  /* position: absolute; */
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-color: rgb(4, 34, 73);
+
+.anvil-role-curtain_maker:hover {
+  background: linear-gradient(180deg, var(--primary-mid) 0%, var(--primary) 100%);
 }
 
+/* Panel close button */
+.anvil-role-panel_closer {
+  background-color: var(--primary-light);
+  margin-bottom: 8px;
+  border-radius: var(--radius);
+  border: 1px solid var(--primary-light);
+}
 
-/* Graph Panel */
+.anvil-role-panel_closer .button-text {
+  color: var(--primary) !important;
+  font-weight: 600;
+  font-size: 12px;
+}
+
+/* ─── Graph panel ──────────────────────────────────────────────────────────── */
 .anvil-panel-col-PKRSVT {
   display: grid;
   grid-template-columns: 1fr;
   box-sizing: border-box !important;
   position: relative;
   overflow-y: hidden;
-  border-radius: 5px;
-  border: solid 1px rgba(40, 40, 40, 0.222);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  background: var(--surface-alt);
   transition: all 150ms ease-in-out;
+  box-shadow: var(--shadow-sm);
 }
 
-.landing_screen{
-  position: absolute;
-  display: grid;
-  width: 100%;
-  height: calc(100vh - 100px);
-  background-color: rgba(1, 48, 87, 0.993);
-  z-index: 10000;
-  border-radius: 10px;
-  color: white;
-  place-content: center;
-}
-.video_screen{
-  position: absolute;
-  display: none;
-  width: 100%;
-  height: calc(100vh - 100px);
-  background-color: rgba(0, 0, 0, 0.841);
-  z-index: 10000;
-  border-radius: 10px;
-  color: white;
-  place-content: center;
-}
-.anvil-role-curtain_maker{
-  display: grid;
-  opacity: 1;
-  background-color: rgb(2, 56, 24);
-  position: absolute;
-  z-index: 1000;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 100vh;
-  transition: all 150ms ease;
-  place-content: center;
-  font-size: 3rem;
-  font-weight: bolder;
-  color: white;
-}
-.anvil-role-panel_closer{
-  background-color: rgb(0, 109, 143);
-  margin-bottom: 10px;
-  /* width: 100% !important; */
-  /* color: white !important; */
-}
-
-.anvil-role-panel_closer .button-text{
-  /* background-color: rgb(2, 56, 24);
-  margin-bottom: 10px; */
-  /* width: 100% !important; */
-  color: white !important;
-}
+/* ─── Graph navigation tab bar ─────────────────────────────────────────────── */
 .anvil-role-graph_navigation {
   position: sticky;
   z-index: 500;
-  background-color: #00a0e3 !important;
+  background: linear-gradient(90deg, var(--primary-dark) 0%, var(--primary) 100%) !important;
+  border-bottom: none;
+  padding: 0 8px;
+  box-shadow: 0 2px 8px rgba(15,23,42,0.18);
 }
 
-.anvil-panel-col-PKRSVT>div {
-  flex-grow: 0;
+/* Tab buttons */
+.anvil-role-tab-button > .btn {
+  color: rgba(255, 255, 255, 0.72) !important;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  padding: 8px 12px;
+  border-radius: 0;
+  border-bottom: 3px solid transparent;
+  background: transparent !important;
+  box-shadow: none !important;
+  transition: color 120ms ease, border-color 120ms ease;
+}
+
+.anvil-role-tab-button > .btn:hover {
+  color: rgba(255, 255, 255, 0.95) !important;
+  background: rgba(255,255,255,0.07) !important;
+  border-bottom-color: rgba(255,255,255,0.4);
+}
+
+/* Active tab */
+.anvil-role-active-button > .btn,
+.anvil-role-active-button > button,
+.anvil-role-active-button > button > .button-text {
+  color: #ffffff !important;
+  font-weight: 700;
+  border-bottom: 3px solid var(--accent) !important;
+  text-decoration: none !important;
+}
+
+/* Sub-tab buttons */
+.sub_tabs .anvil-role-tab-button > .btn {
+  color: var(--text-muted) !important;
+  font-size: 11.5px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  text-transform: none;
+  padding: 5px 10px;
+  border-radius: var(--radius);
+  border: 1px solid transparent;
+  background: transparent !important;
+  box-shadow: none !important;
+  margin: 2px 2px;
+}
+
+.sub_tabs .anvil-role-tab-button > .btn:hover {
+  background: var(--primary-light) !important;
+  color: var(--primary) !important;
+  border-color: var(--primary-light);
+}
+
+.sub_tabs .anvil-role-active-button > .btn,
+.sub_tabs .anvil-role-active-button > button > .button-text {
+  background: var(--primary) !important;
+  color: #ffffff !important;
+  border-color: var(--primary) !important;
+  font-weight: 600;
+  text-decoration: none !important;
+}
+
+/* ─── Graph inner container ─────────────────────────────────────────────────── */
+.anvil-panel-col-JXOYRH {
+  display: grid;
+  position: relative !important;
+  width: 100%;
   margin: 0 !important;
   padding: 0 !important;
-  position: relative;
-  border-radius: 4px;
+  overflow: auto;
+  box-sizing: border-box !important;
 }
 
+.anvil-panel-col-JXOYRH > div {
+  position: relative;
+  box-sizing: border-box;
+  display: block !important;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  margin: 0;
+  overflow: auto;
+}
+
+.anvil-panel-col-JXOYRH > div > div {
+  position: relative;
+  box-sizing: border-box;
+  display: flex;
+  column-gap: 6px;
+  row-gap: 6px;
+  border-radius: var(--radius);
+  border: none;
+  overflow: auto;
+  padding: 6px;
+  background: var(--surface-alt);
+}
+
+.anvil-panel-col-JXOYRH > div > div > div {
+  border: 1px solid var(--border);
+  max-width: 100%;
+  place-self: stretch;
+  place-content: stretch;
+  place-items: stretch;
+  overflow: auto;
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+}
+
+.anvil-panel-col-JXOYRH > div > div > div > div {
+  width: 100%;
+  height: 100%;
+}
+
+/* ─── Graph master container ────────────────────────────────────────────────── */
 .anvil-role-graph_master_container {
   position: relative;
   box-sizing: border-box;
@@ -478,9 +421,99 @@ a:active {
   height: 100%;
   margin: 0 !important;
   padding: 0 !important;
-  border-radius: 4px;
+  border-radius: var(--radius);
 }
 
+/* ─── The graphs role (dynamic grid set by JS) ──────────────────────────────── */
+.anvil-role-the_graphs {
+  max-height: 100%;
+  background: var(--surface-alt) !important;
+}
+
+.anvil-role-the_graphs > div                   { height: 100% !important; }
+.anvil-role-the_graphs > div > div             { max-height: 100% !important; }
+.anvil-role-the_graphs > div > div > div       { height: 100% !important; }
+.anvil-role-the_graphs > div > div > div > div { height: 100% !important; }
+
+.anvil-role-the_graphs > div > div > div > div > div       { height: 100% !important; }
+.anvil-role-the_graphs > div > div > div > div > div > div { height: 100% !important; }
+
+.anvil-role-the_graphs > div > div > div > div > div > div > div {
+  height: 100% !important;
+  overflow: auto;
+  border: 1px solid var(--border);
+  min-height: 300px;
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+.anvil-role-the_graphs > .anvil-panel-section { display: block; }
+
+/* ─── Plot container ────────────────────────────────────────────────────────── */
+.plot-container {
+  box-sizing: border-box;
+  flex: 1;
+  border-radius: var(--radius);
+  overflow: auto;
+  height:    100% !important;
+  max-height: 100% !important;
+  width:     100% !important;
+  max-width: 100% !important;
+}
+
+/* ─── Landing / video screens ───────────────────────────────────────────────── */
+.landing_screen {
+  position: absolute;
+  display: grid;
+  width: 100%;
+  height: calc(100vh - 100px);
+  background: linear-gradient(135deg, var(--primary-dark) 0%, #1e1b4b 60%, #0f172a 100%);
+  z-index: 10000;
+  border-radius: var(--radius-lg);
+  color: white;
+  place-content: center;
+  font-size: 2.2rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+.video_screen {
+  position: absolute;
+  display: none;
+  width: 100%;
+  height: calc(100vh - 100px);
+  background: rgba(15, 23, 42, 0.88);
+  z-index: 10000;
+  border-radius: var(--radius-lg);
+  color: white;
+  place-content: center;
+  backdrop-filter: blur(4px);
+}
+
+/* ─── Ultra-container cleanup ───────────────────────────────────────────────── */
+.anvil-role-graph_ultracontainer {
+  position: relative;
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  margin: 0 auto !important;
+  padding: 0 !important;
+  border-radius: var(--radius);
+  overflow: auto;
+}
+
+.anvil-role-graph_ultracontainer > div:nth-child(2) {
+  margin-top: 0;
+  background-color: transparent !important;
+}
+
+.anvil-role-graph_ultracontainer > div:nth-child(3) {
+  all: unset !important;
+  position: relative;
+  background: var(--surface) !important;
+}
+
+/* ─── Misc structural helpers ───────────────────────────────────────────────── */
 .anvil-panel-col-KAORNN {
   position: relative;
   box-sizing: border-box !important;
@@ -488,7 +521,7 @@ a:active {
   height: 100%;
 }
 
-.anvil-panel-col-KAORNN>.col-padding.col-padding-medium {
+.anvil-panel-col-KAORNN > .col-padding.col-padding-medium {
   display: block;
   position: relative;
   box-sizing: border-box !important;
@@ -502,76 +535,10 @@ a:active {
   padding: 0 !important;
 }
 
-.anvil-panel-row-BQAUXP>.anvil-panel-col {
+.anvil-panel-row-BQAUXP > .anvil-panel-col {
   box-sizing: border-box !important;
-  padding-bottom: 0px !important;
-  margin-bottom: 0px !important;
-  padding: 0px !important;
-  margin: 0px !important;
-}
-
-.anvil-role-graph_ultracontainer {
-  position: relative;
-  box-sizing: border-box;
-  display: block;
-  width: 100%;
-  margin: 0 auto !important;
   padding: 0 !important;
-  border-radius: 4px;
-  overflow: auto;
-}
-
-@media (min-width: 992px) {
-  .anvil-panel-section-container:not(.full-width-row) {
-    max-width: 100% !important;
-  }
-}
-
-@media (min-width: 768px) {
-  .anvil-panel-section-container:not(.full-width-row) {
-    max-width: 100% !important;
-  }
-}
-
-
-.anvil-role-graph_ultracontainer>div:nth-child(2) {
-  margin-top: 0px;
-  background-color: #b1cb1f48 !important;
-}
-
-.anvil-role-graph_ultracontainer>div:nth-child(3) {
-  all: unset !important;
-  position: relative;
-  background-color: beige !important;
-
-}
-
-.anvil-panel-col-YCAXIK {
-  display: block;
-}
-
-.belongs-to-ETEBPG {
-  all: unset !important;
-}
-
-.anvil-panel-row-SHKAJT {
-  all: unset !important;
-}
-
-.anvil-panel-col-YSUAKQ {
-  position: relative;
   margin: 0 !important;
-  padding: 0 !important;
-  height: 100%;
-}
-
-.anvil-panel-col-MGKKJU {
-  all: unset !important;
-}
-
-.anvil-role-repeater_block {
-  padding-top: 10px;
-  padding-bottom: 10px;
 }
 
 .anvil-role-graph_supercontainer {
@@ -582,101 +549,19 @@ a:active {
   overflow: auto;
 }
 
-.anvil-role-graph_supercontainer>div {
+.anvil-role-graph_supercontainer > div,
+.anvil-role-graph_supercontainer > div > div,
+.anvil-role-graph_supercontainer > div > div > div,
+.anvil-role-graph_supercontainer > div > div > div > div,
+.anvil-role-graph_supercontainer > div > div > div > div > div {
   position: relative;
   height: 100%;
   max-width: 100%;
   overflow: auto;
 }
 
-.anvil-role-graph_supercontainer>div>div {
-  position: relative;
-  height: 100%;
-  max-width: 100%;
-  overflow: auto;
-}
+.wrap-mobile { margin: 0 !important; padding: 0 !important; }
 
-.anvil-role-graph_supercontainer>div>div>div {
-  position: relative;
-  height: 100%;
-  max-width: 100%;
-  overflow: auto;
-}
-
-.anvil-role-graph_supercontainer>div>div>div>div {
-  position: relative;
-  height: 100%;
-  max-width: 100%;
-  overflow: auto;
-}
-
-.anvil-role-graph_supercontainer>div>div>div>div>div {
-  position: relative;
-  height: 100%;
-  max-width: 100%;
-  overflow: auto;
-}
-
-
-.wrap-mobile {
-  margin: 0 !important;
-  padding: 0 !important;
-}
-
-.anvil-panel-col-JXOYRH {
-  display: grid;
-  position: relative !important;
-  width: 100%;
-  margin: 0 !important;
-  padding: 0 !important;
-  overflow: auto;
-  box-sizing: border-box !important;
-  margin: 0 !important;
-  padding: 0 !important;
-}
-
-.anvil-panel-col-JXOYRH>div {
-  position: relative;
-  box-sizing: border-box;
-  display: block !important;
-  width: 100%;
-  height: 100%;
-  max-width: 100%;
-  max-height: 100%;
-  margin: 0;
-  overflow: auto;
-}
-
-
-.anvil-panel-col-JXOYRH>div>div {
-  position: relative;
-  box-sizing: border-box;
-  display: flex;
-  column-gap: 5px;
-  row-gap: 5px;
-  border-radius: 4px;
-  border: solid 1px yellowgreen;
-  overflow: auto;
-  padding: 4px;
-}
-
-
-.anvil-panel-col-JXOYRH>div>div>div {
-  border: solid 1px rgba(0, 0, 0, 0.194);
-  max-width: 100%;
-  place-self: stretch;
-  place-content: stretch;
-  place-items: stretch;
-  overflow: auto;
-  border-radius: 5px;
-}
-
-.anvil-panel-col-JXOYRH>div>div>div>div {
-  width: 100%;
-  height: 100%;
-}
-
-/* Graph Container */
 .anvil-panel-row-PFCIQQ {
   position: relative;
   display: block !important;
@@ -684,212 +569,216 @@ a:active {
   place-content: center;
 }
 
-.anvil-panel-row-PFCIQQ>div {
+.anvil-panel-row-PFCIQQ > div {
   position: relative !important;
   height: 100%;
   max-height: 100% !important;
   overflow: auto;
 }
 
-.anvil-panel-row-PFCIQQ>div>div {
+.anvil-panel-row-PFCIQQ > div > div {
   position: relative !important;
   height: 100%;
   max-height: 100%;
   overflow: auto;
 }
 
-.anvil-role-unwanted-1 {
-  display: none;
+.anvil-role-unwanted-1, .anvil-panel-row-OROLTQ { display: none; }
+
+.flow-panel-gutter       { justify-content: space-around !important; }
+.svg-container           { overflow: auto; }
+.anvil-panel-col-YCAXIK  { display: block; }
+.belongs-to-ETEBPG       { all: unset !important; }
+.anvil-panel-row-SHKAJT  { all: unset !important; }
+.anvil-panel-col-MGKKJU  { all: unset !important; }
+
+.anvil-panel-col-YSUAKQ {
+  position: relative;
+  margin: 0 !important;
+  padding: 0 !important;
+  height: 100%;
 }
 
-.anvil-panel-row-OROLTQ {
-  display: none;
+.anvil-panel-row-ADSVVV > .wrap-mobile { overflow: hidden; }
+.anvil-plot { display: flex; overflow: hidden; }
+.main-svg   { display: flex; overflow: auto !important; }
+
+/* ─── Repeater / lever list ─────────────────────────────────────────────────── */
+.anvil-role-repeating-container {
+  display: grid;
+  grid-template-columns: 1fr;
 }
 
-.plot-container {
-  box-sizing: border-box;
-  flex: 1;
-  border-radius: 4px;
-  overflow: auto;
-  height: 100% !important;
-  max-height: 100% !important;
-  width: 100% !important;
-  max-width: 100% !important;
+.anvil-role-repeating-container > div {
+  padding-top: 8px;
+  padding-bottom: 8px;
 }
 
-.flow-panel-gutter {
-  justify-content: space-around !important;
+.anvil-role-repeating-container > div > div {
+  display: grid;
+  grid-template-columns: 1fr;
+  padding: 2px !important;
+  margin: 2px !important;
+  border: 1px solid transparent;
+  border-radius: var(--radius);
+  transition: border-color 100ms ease;
 }
 
-.svg-container {
-  overflow: auto;
+.anvil-role-repeating-container > div > div:hover {
+  border-color: var(--border-mid);
 }
 
-.anvil-role-the_graphs {
-  max-height: 100%;
+.anvil-role-repeater_block {
+  padding-top: 8px;
+  padding-bottom: 8px;
 }
 
-.anvil-role-the_graphs>div {
-  height: 100% !important;
-}
+/* hide 3rd column in data-row */
+.data-row-col:nth-child(3) { display: none; }
+#newoneout                  { display: none; }
 
-.anvil-role-the_graphs>div>div {
-  max-height: 100% !important;
-}
-
-.anvil-role-the_graphs>div>div>div {
-  height: 100% !important;
-}
-
-.anvil-role-the_graphs>div>div>div>div {
-  height: 100% !important;
-}
-
-.anvil-role-the_graphs>div>div>div>div>div {
-  height: 100% !important;
-}
-
-.anvil-role-the_graphs>div>div>div>div>div>div {
-  height: 100% !important;
-}
-
-
-.anvil-role-select_box_pathways form select:nth-child(0) {
-  user-select: none;
-  color: red;
-}
-
-.anvil-role-the_graphs>div>div>div>div>div>div>div {
-  height: 100% !important;
-  overflow: auto;
-  border: solid 1px rgba(64, 62, 62, 0.211);
-  min-height: 300px;
-}
-
-.anvil-role-the_graphs>.anvil-panel-section {
-  display: block;
-}
-
-.anvil-plot {
-  display: flex;
-  overflow: hidden;
-}
-
-.anvil-panel-row-ADSVVV>.wrap-mobile {
-  overflow: hidden;
-}
-
-.main-svg {
-  display: flex;
-  overflow: auto !important;
-}
-
-/* LEVER CONTAINER DESIGNS */
-
+/* ─── Lever container ───────────────────────────────────────────────────────── */
 .anvil-role-leverContainer {
-  border: solid 1px rgba(14, 41, 99, 0.658);
-  border-radius: 4px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
   overflow: hidden;
-  padding: 5px;
+  padding: 4px;
+  background: var(--surface);
+  transition: box-shadow 120ms ease;
 }
 
+.anvil-role-leverContainer:hover {
+  box-shadow: var(--shadow-sm);
+  border-color: var(--border-mid);
+}
+
+/* Lever level buttons */
+.anvil-role-lever-button { display: grid; }
+
+.anvil-role-lever-button > .btn {
+  box-shadow: 0 1px 2px rgba(15,23,42,0.12);
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 0;
+  min-height: calc(0px + 1.42857143em);
+  border: 1px solid rgba(15,23,42,0.18);
+  background-image: none;
+  color: var(--text-primary);
+  transition: background 80ms ease, border-color 80ms ease;
+}
+
+.anvil-role-lever-button > .btn:hover {
+  background-color: var(--primary-light) !important;
+  border-color: var(--primary-mid) !important;
+  color: var(--primary) !important;
+}
+
+.anvil-role-lever-buttons {
+  width: 110px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.anvil-role-lever-label > .link-text {
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--text-primary);
+  padding: 2px 0 0;
+  text-align: left;
+  border: 0;
+  background: transparent;
+  text-shadow: none;
+  box-shadow: none;
+  border-radius: var(--radius);
+}
+
+/* bottom border row */
 .anvil-role-bottom-border {
   display: flex;
   text-align: center !important;
   position: relative !important;
   height: 40px;
+  background-color: var(--surface);
+  box-shadow: 0 -1px 4px rgba(15,23,42,0.07);
 }
 
-.anvil-role-bottom-border>div {
+.anvil-role-bottom-border > div {
   display: inline-flex !important;
   position: relative !important;
-  color: rgb(70, 16, 16);
-  margin: 0;
-  padding: 0;
+  color: var(--text-primary);
+  margin: 0; padding: 0;
 }
 
-.anvil-role-bottom-border>div>div {
+.anvil-role-bottom-border > div > div {
   position: relative !important;
   text-align: center !important;
   left: 0 !important;
   flex: 1 !important;
   justify-items: flex-start !important;
   height: 40px;
-  margin: 0;
-  padding: 0;
+  margin: 0; padding: 0;
   width: 100%;
 }
 
-.anvil-role-bottom-border>div>div:nth-child(1) {
-  flex: 1 !important;
+/* ─── Pathway selector dropdown ─────────────────────────────────────────────── */
+.anvil-role-select_box_pathways {
+  width: 100%;
+  border: 1px solid var(--border-mid);
+  border-radius: var(--radius);
+  padding: auto 5px;
+  background: var(--surface);
 }
 
-.anvil-role-bottom-border>div>div:nth-child(2) {
-  flex: 1 !important;
+.anvil-role-select_box_pathways > form > select {
+  padding: 0 16px !important;
+  font-size: 13px;
+  color: var(--text-primary);
 }
 
+/* ─── Primary / reset buttons ────────────────────────────────────────────────── */
 .anvil-role-primary-color {
   margin: 0;
   width: 100%;
 }
 
-.anvil-role-primary-color>.btn {
+.anvil-role-primary-color > .btn {
   width: 100%;
   margin-bottom: 5px;
-  background-color: #ef7f1a !important;
+  background-color: var(--accent) !important;
+  color: #ffffff !important;
+  font-weight: 600;
+  font-size: 12px;
+  border-radius: var(--radius);
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  box-shadow: 0 2px 6px rgba(245,158,11,0.35);
 }
 
-.anvil-role-select_box_pathways {
-  width: 100%;
-  border: solid 1px rgba(0, 0, 0, 0.212);
-  border-radius: 5px;
-  padding: auto 5px;
+.anvil-role-primary-color > .btn:hover {
+  background-color: var(--accent-dark) !important;
+  box-shadow: 0 4px 10px rgba(245,158,11,0.4);
 }
 
-.anvil-role-select_box_pathways>form>select {
-  padding: 0 16px !important;
+/* Year dropdown */
+.anvil-role-year-dropdown .form-control {
+  height: 2em !important;
+  padding: 0 !important;
+  font-size: 12px;
 }
 
-.anvil-role-repeating-container {
-  display: grid;
-  grid-template-columns: 1fr;
+/* Arrow nav button */
+.anvil-role-arrow-button > .btn {
+  padding: 5px 0 0 !important;
+  min-height: 1em !important;
 }
+.anvil-role-arrow-button { width: 15px !important; }
 
-.anvil-role-repeating-container>div>div {
-  display: grid;
-  grid-template-columns: 1fr;
-  border: solid 1px rgba(67, 67, 133, 0.11);
-  transition: all 100ms ease-in-out;
-}
+/* ─── Expert-mode toggle ─────────────────────────────────────────────────────── */
+.anvil-role-none { display: none; }
+.anvil-panel-col-OROLTQ { display: none; min-width: 150px; }
 
-.data-row-col:nth-child(3) {
-  display: none;
-  border: solid 4px yellowgreen;
-}
-
-#newoneout {
-  display: none;
-}
-
-.anvil-role-repeating-container>div {
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
-
-.anvil-role-repeating-container>div>div {
-  padding: 2px !important;
-  margin: 2px !important;
-}
-
-
-.anvil-role-repeating-container>div>div:hover {
-  border: solid 1px rgba(67, 67, 133, 0.562);
-}
-
-.anvil-role-lever-button {
-  display: grid;
-}
-
+/* ─── Footer ─────────────────────────────────────────────────────────────────── */
 .footer-anvil-iess {
   position: fixed;
   z-index: 1150;
@@ -898,98 +787,155 @@ a:active {
   display: grid;
   place-content: center;
   grid-column: 1 / -1;
-  height: 25px;
-  padding: 4px;
-  background-color: rgb(238, 231, 231);
-  /* color: grey; */
-  box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
-  font-size: 1.2rem;
+  height: 26px;
+  padding: 4px 16px;
+  background: linear-gradient(90deg, var(--primary-dark) 0%, var(--primary) 100%);
+  color: rgba(255,255,255,0.82);
+  font-size: 11.5px;
+  letter-spacing: 0.01em;
+  box-shadow: 0 -2px 8px rgba(15,23,42,0.15);
 }
 
-.anvil-role-none {
-  display: none;
-
+.footer-anvil-iess a {
+  color: var(--accent) !important;
+  font-weight: 600;
+  transition: opacity 120ms;
 }
 
-/* width */
-::-webkit-scrollbar {
-  width: 7px;
-  height: 7px;
-  -webkit-transition: all 150ms ease-in-out;
-  transition: all 150ms ease-in-out;
+.footer-anvil-iess a:hover { opacity: 0.85; }
+
+/* ─── Sankey node label ───────────────────────────────────────────────────────── */
+.sankey .node-label-text-path {
+  text-shadow: none;
+  fill: var(--text-primary) !important;
+  font-size: 12px !important;
+  font-weight: 600;
+  font-family: Inter, Arial, sans-serif;
 }
 
-/* Track */
-::-webkit-scrollbar-track {
-  background: rgba(183, 217, 221, 0.937);
-  border-radius: 2px;
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: rgba(17, 45, 124, 0.349);
-  border-radius: 2px;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: rgba(3, 32, 75, 0.527);
-}
-
-
-/* ------------------End of custom design */
-/* Mobile and desktop margins for content */
-.content>*>.anvil-container {
-  padding: 3px;
-}
-
-.content .anvil-measure-this {
-  padding-bottom: 1px;
-  /* Prevent margin collapse messing up embedding */
-}
-
-/* Allow overflows to show drop shadows in ColumnPanels
-   This can create unwanted scrollbars; we compensate for this at the top level with .nav-holder .content {overflow-x: hidden;}
-*/
-.anvil-container-overflow {
-  overflow-x: visible;
-  overflow-y: visible;
-}
-
-/* Desktop: Nav bar pinned */
-
-.nav-holder {
-  display: flex;
-  flex-direction: row;
-}
-
-.nav-holder .left-nav {
+/* ─── Buttons (generic) ──────────────────────────────────────────────────────── */
+.btn,
+.btn-default,
+.file-loader > label {
+  border-radius: var(--radius);
+  font-size: 13px;
+  font-weight: 500;
+  padding: 8px 16px;
+  min-height: calc(16px + 1.42857143em);
+  text-transform: uppercase;
+  width: 100%;
+  border: 0;
+  background-image: none;
+  background-color: transparent;
+  color: var(--primary-mid);
+  text-shadow: none;
+  box-shadow: none;
+  -webkit-box-shadow: none;
   position: relative;
-  flex-shrink: 0;
-  min-width: 160px;
-  max-width: 400px;
+  transition: background-color 100ms ease;
 }
 
-.nav-shield {
-  display: none;
+.btn:hover,
+.btn:focus,
+.file-loader > label:hover {
+  background-color: rgba(79,70,229,0.07);
+  background-image: none;
+  outline: none;
+  color: var(--primary);
 }
 
-/* Mobile: Nav bar is a modal overlay */
+.btn:active,
+.btn:active:focus {
+  background-color: rgba(79,70,229,0.14);
+  background-image: none;
+  outline: none;
+  box-shadow: none;
+  color: var(--primary);
+}
 
-@media(max-width:1300px) {
-  .anvil-panel-col-JXOYRH>div>div {
+.btn[disabled] { color: rgba(15,23,42,0.28); }
+
+.anvil-role-raised > .btn,
+.anvil-role-primary-color > .btn,
+.anvil-role-secondary-color > .btn,
+.btn-primary, .btn-success, .btn-info, .btn-warning, .btn-danger {
+  box-shadow: 0 2px 4px rgba(15,23,42,0.12);
+}
+
+.anvil-role-raised > .btn[disabled],
+.anvil-role-primary-color > .btn[disabled],
+.anvil-role-secondary-color > .btn[disabled] {
+  background-color: rgba(15,23,42,0.08) !important;
+  color: rgba(15,23,42,0.28) !important;
+  box-shadow: none !important;
+}
+
+.btn-primary, .anvil-role-primary-color > .btn,
+.anvil-role-primary-color.file-loader > label {
+  color: white;
+  background-color: var(--primary-mid);
+}
+
+.anvil-role-secondary-color > .btn,
+.anvil-role-secondary-color.file-loader > label {
+  color: white;
+  background-color: #0ea5e9;
+}
+
+.btn-success, .btn-info, .btn-warning, .btn-danger { color: white; }
+
+.anvil-role-primary-color > .btn:hover,
+.anvil-role-primary-color > .btn:active,
+.anvil-role-primary-color > .btn:focus,
+.btn-primary:hover, .btn-primary:active, .btn-primary:focus {
+  color: white;
+  background-color: var(--primary);
+}
+
+.anvil-role-raised > .btn:active,
+.btn-primary:active, .btn-success:active,
+.btn-info:active, .btn-warning:active, .btn-danger:active {
+  box-shadow: 0 6px 16px rgba(15,23,42,0.18);
+  top: -1px;
+}
+
+/* ─── Card component ─────────────────────────────────────────────────────────── */
+.anvil-role-card {
+  overflow: hidden;
+  border-radius: var(--radius);
+  background-color: var(--surface);
+  padding: 8px 12px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border);
+}
+
+.column-panel.anvil-role-card > .anvil-panel-section > .anvil-panel-section-container.full-width-row {
+  margin-left: -12px; margin-right: -12px; width: initial;
+}
+.column-panel.anvil-role-card > .anvil-panel-section:first-child > .anvil-panel-section-container.full-width-row {
+  margin-top: -8px;
+}
+.column-panel.anvil-role-card > .anvil-panel-section:last-child > .anvil-panel-section-container.full-width-row {
+  margin-bottom: -8px;
+}
+
+/* ─── Responsive / media ─────────────────────────────────────────────────────── */
+@media (min-width: 992px) {
+  .anvil-panel-section-container:not(.full-width-row) { max-width: 100% !important; }
+}
+@media (min-width: 768px) {
+  .anvil-panel-section-container:not(.full-width-row) { max-width: 100% !important; }
+}
+
+@media (max-width: 1300px) {
+  .anvil-panel-col-JXOYRH > div > div {
     flex-wrap: wrap;
     grid-template-columns: 1fr;
   }
 
-  html:not(.designer) .nav-holder {
-    display: block;
-  }
+  html:not(.designer) .nav-holder { display: block; }
 
-  .structure {
-    display: grid;
-    grid-template-columns: 1fr;
-  }
+  .structure { display: grid; grid-template-columns: 1fr; }
 
   .anvil-panel-row-GYKMWG {
     display: grid;
@@ -998,56 +944,53 @@ a:active {
     grid-template-rows: 3.5fr 1fr;
   }
 
-  .anvil-panel-col-BITUCV {
-    grid-column: 1 / -1;
-    grid-row: 2 / -1;
-  }
-
-  .anvil-panel-col-PKRSVT {
-    grid-column: 1 / -1;
-    grid-row: 1 / 2;
-  }
+  .anvil-panel-col-BITUCV { grid-column: 1 / -1; grid-row: 2 / -1; }
+  .anvil-panel-col-PKRSVT { grid-column: 1 / -1; grid-row: 1 / 2; }
 
   html:not(.designer) .nav-holder .left-nav {
     position: fixed;
-    top: 0;
-    bottom: 0;
+    top: 0; bottom: 0;
     width: calc(100% - 56px);
     max-width: 360px;
     z-index: 3;
     border-right: none;
-    /* 16dp */
-    box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
-
+    box-shadow: var(--shadow-lg);
     display: none;
     transition: right 0.5s;
   }
 
-  html:not(.designer) .nav-holder .left-nav.shown {
-    display: block;
-  }
-
+  html:not(.designer) .nav-holder .left-nav.shown { display: block; }
   .nav-shield.shown {
     display: block;
     position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    top: 0; bottom: 0; left: 0; right: 0;
     z-index: 2;
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: rgba(15,23,42,0.35);
+    backdrop-filter: blur(2px);
   }
 }
+
+/* ─── Left nav sidebar ───────────────────────────────────────────────────────── */
+.nav-holder { display: flex; flex-direction: row; }
+
+.nav-holder .left-nav {
+  position: relative;
+  flex-shrink: 0;
+  min-width: 160px;
+  max-width: 400px;
+}
+
+.nav-shield { display: none; }
 
 .nav-holder .left-nav,
 .left-nav-placeholder {
   display: flex;
   flex-direction: column;
-  background: white;
-  border-right: 1px solid #c41414;
+  background: var(--surface);
+  border-right: 1px solid var(--border);
   font-size: 14px;
   font-weight: 500;
-  color: rgba(0, 0, 0, 0.87);
+  color: var(--text-primary);
   overflow-x: hidden;
   overflow-y: auto;
 }
@@ -1063,673 +1006,178 @@ a:active {
   display: inline-block;
   white-space: nowrap;
   transform: translate(-50%, 0) rotate(-90deg) translate(-50%, 0) translate(15px, 16px);
-  padding: 16px 16px;
+  padding: 16px;
   color: #888;
   outline: 1px dotted #888;
   visibility: hidden;
 }
 
-.anvil-highlight .left-nav-placeholder .prompt {
-  visibility: visible;
+.anvil-highlight .left-nav-placeholder .prompt { visibility: visible; }
+
+.left-nav > .column-panel { padding: 24px 0; }
+
+.left-nav > .column-panel > .anvil-panel-section > .anvil-panel-section-container:not(.full-width-row) {
+  margin: 0 16px; width: initial; overflow-x: visible;
 }
 
-.left-nav>.column-panel {
-  padding: 24px 0;
-}
-
-.left-nav>.column-panel>.anvil-panel-section>.anvil-panel-section-container:not(.full-width-row) {
-  margin: 0 16px;
-  width: initial;
-  overflow-x: visible;
-}
-
-.left-nav>.column-panel>.anvil-panel-section:first-child>.anvil-panel-section-container.full-width-row {
+.left-nav > .column-panel > .anvil-panel-section:first-child > .anvil-panel-section-container.full-width-row {
   margin-top: -24px;
 }
 
-.left-nav>.column-panel>.anvil-panel-section>.anvil-panel-section-container>.anvil-panel-section-gutter>.anvil-panel-row>.anvil-panel-col {
+.left-nav > .column-panel > .anvil-panel-section > .anvil-panel-section-container > .anvil-panel-section-gutter > .anvil-panel-row > .anvil-panel-col {
   overflow-x: visible;
 }
 
-/* Make all the sidebar icons look nice */
-
-.left-nav .anvil-component-icon {
-  font-size: 160%;
-}
-
-.left-nav .anvil-component-icon.left-icon {
-  width: 0;
-  margin-right: 56px;
-  position: relative;
-  top: 0.15em;
-}
-
+.left-nav .anvil-component-icon { font-size: 160%; }
+.left-nav .anvil-component-icon.left-icon { width: 0; margin-right: 56px; position: relative; top: 0.15em; }
 .left-nav .anvil-component-icon.left_edge-icon,
-.left-nav .anvil-component-icon.right_edge-icon {
-  left: 16px;
-  padding-top: 2px;
-  width: 0;
-}
-
-.left-nav .anvil-component-icon.right_edge-icon {
-  left: initial;
-  right: 16px;
-  top: 0;
-  padding-top: 2px;
-}
-
-/* Sidebar links (and labels with edge icons) go +16px wider
-   (Top-level columns in ColumnPanels get overflow-x visible [see above]to enable this)
-*/
+.left-nav .anvil-component-icon.right_edge-icon { left: 16px; padding-top: 2px; width: 0; }
+.left-nav .anvil-component-icon.right_edge-icon { left: initial; right: 16px; top: 0; }
 
 .left-nav a,
 .left-nav .anvil-label.left_edge-icon,
 .left-nav .anvil-label.right_edge-icon {
-  color: rgba(0, 0, 0, 0.87);
+  color: var(--text-primary);
   margin: 0 -16px;
   padding: 4px 16px;
 }
 
-.left-nav .anvil-component.left_edge-icon {
-  padding-left: 72px;
-}
+.left-nav .anvil-component.left_edge-icon { padding-left: 72px; }
 
 .left-nav a:hover,
 .left-nav .anvil-role-selected {
-  color: %color:Primary 700%;
-  background-color: rgba(0, 0, 0, .08);
+  color: var(--primary-mid);
+  background-color: var(--primary-light);
 }
 
-.designer .nav-holder .left-nav {
-  min-width: 56px;
-}
+.designer .nav-holder .left-nav { min-width: 56px; }
+.designer .nav-holder .left-nav > .anvil-component { min-width: 160px; }
+.nav-holder .left-nav > .anvil-component { margin-top: 0; margin-bottom: 0; }
 
-.designer .nav-holder .left-nav>.anvil-component {
-  min-width: 160px;
-}
+/* ─── App bar components ─────────────────────────────────────────────────────── */
+.app-bar { min-height: 56px; line-height: 40px; font-size: 18px; font-weight: 600; }
 
-.nav-holder .left-nav>.anvil-component {
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-/* Components: App Bar */
-.app-bar {
-  min-height: 56px;
-  line-height: 40px;
-  font-size: 20px;
-  font-weight: 500;
-  color: rgb(48, 48, 48);
-  background-color: rgb(219, 219, 219);
-  column-span: 1 / -1;
-  z-index: 1;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
-}
-
-.app-bar .anvil-component {
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-.app-bar>.sidebar-toggle {
-  display: block;
-  float: left;
-  margin-left: -61px;
-}
-
-.app-bar>.top-left-btn {
-  float: left;
-  margin-left: -60px;
-  margin-right: -40px;
-}
-
-.app-bar>.title>.placeholder {
-  outline: 1px dotted;
-  padding-left: 16px;
-  padding-right: 16px;
-  margin: 8px 8px 0;
-  display: none;
-}
-
-.app-bar>.app-bar-nav {
-  float: right;
-  font-weight: normal;
-}
-
-.app-bar>.app-bar-nav .placeholder {
-  margin-top: 8px;
-  padding: 0 8px;
-}
-
-.anvil-highlight .app-bar>.app-bar-nav .placeholder {
-  outline: 1px dotted #ccc;
-}
-
-.anvil-highlight .app-bar>.title>.placeholder {
-  display: block;
-}
+.app-bar .anvil-component { margin-top: 0; margin-bottom: 0; }
+.app-bar > .sidebar-toggle { display: block; float: left; margin-left: -61px; }
+.app-bar > .top-left-btn   { float: left; margin-left: -60px; margin-right: -40px; }
 
 .app-bar a,
 .app-bar .anvil-component {
   display: block;
-  color: rgb(80, 80, 80);
+  color: rgba(255,255,255,0.9);
   line-height: 30px;
   min-width: 30px;
   min-height: 30px;
   margin: 5px 4px 0;
 }
 
-.app-bar .title .anvil-component {
-  margin-left: 0;
-}
-
-.app-bar input.anvil-component,
-.app-bar .anvil-component input {
-  line-height: 30px;
-  color: white;
-}
-
-.app-bar select.form-control {
-  height: 43px;
-}
-
-.app-bar .anvil-component-icon-present .anvil-component-icon,
-.app-bar .sidebar-toggle .fa {
-  width: 30px;
-  text-align: center;
-}
-
-/* Don't put spacing on the top-level container (eg FlowPanel) */
-.app-bar-nav>.anvil-container {
-  margin: 0;
-  padding: 0;
-  min-height: 56px;
-}
-
-.anvil-highlight .app-bar-nav>.anvil-container:not(.has-components):not(a) {
-  outline: 1px dotted #fff;
-  margin-top: 8px;
-  min-height: 40px;
-  padding: 5px 8px;
-}
-
-.anvil-highlight .app-bar-nav>.anvil-container:not(.has-components):not(a)::after {
-  content: "Drop Links here"
-}
-
-/* Rejig margin vs padding to give links the halo */
-.app-bar a,
-.app-bar a.anvil-component {
-  padding: 5px;
-  margin: 8px 0 0;
-  border-radius: 20px;
-}
-
-.app-bar a .link-text {
-  padding: 0 4px;
-}
-
-.app-bar a.has-text .anvil-component-icon.left {
-  margin-right: 4px;
-}
-
-.app-bar a.has-text .anvil-component-icon.right {
-  margin-left: 4px;
-}
+.app-bar a { padding: 5px; margin: 8px 0 0; border-radius: 20px; }
+.app-bar a .link-text { padding: 0 4px; }
 
 .app-bar a:hover,
 .app-bar a:active {
-  color: #eee;
+  color: white;
   text-decoration: none;
-  background-color: %color:Primary 700%;
+  background-color: rgba(255,255,255,0.12);
 }
 
+.app-bar-nav > .anvil-container { margin: 0; padding: 0; min-height: 56px; }
 
-/* Component: Dialog (alert), Notification */
+/* ─── Alerts / dialogs ───────────────────────────────────────────────────────── */
 .modal-content,
-body>div[data-notify="container"] {
-  border-radius: 2px;
-  /* 24dp */
-  box-shadow: 0 9px 46px 8px rgba(0, 0, 0, 0.14), 0 11px 15px -7px rgba(0, 0, 0, 0.12), 0 24px 38px 3px rgba(0, 0, 0, 0.2) !important;
+body > div[data-notify="container"] {
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg) !important;
 }
 
-.modal-header {
-  padding: 24px 24px 0px;
-  font-size: 24px;
-  line-height: 32px;
-  border: 0;
-}
-
-.modal-body {
-  padding: 20px 24px 24px;
-  font-size: 16px;
-  color: #747474;
-}
-
-.modal-footer {
-  padding: 8px 8px 8px 24px;
-  border: 0;
-}
-
-.modal-footer .btn {
-  background-color: transparent;
-  color: %color:Primary 500%;
-}
-
+.modal-header { padding: 24px 24px 0; font-size: 22px; line-height: 30px; border: 0; }
+.modal-body   { padding: 20px 24px 24px; font-size: 15px; color: var(--text-muted); }
+.modal-footer { padding: 8px 8px 8px 24px; border: 0; }
+.modal-footer .btn { background: transparent; color: var(--primary-mid); }
 .modal-footer .btn,
 .modal-footer .btn:focus,
-.modal-footer .btn:active {
-  box-shadow: none;
-  top: 0;
+.modal-footer .btn:active { box-shadow: none; top: 0; }
+
+body > div[data-notify="container"] { background: white; border: none; padding: 24px; }
+body > div[data-notify="container"] > span[data-notify="title"] {
+  display: block; font-size: 17px; font-weight: 600; color: var(--text-primary);
 }
-
-/* Notifications */
-body>div[data-notify="container"] {
-  background: white;
-  border: none;
-  padding: 24px;
+body > div[data-notify="container"] > span[data-notify="message"] {
+  display: block; padding: 16px 0 0; font-size: 15px; color: var(--text-muted);
 }
+body > div[data-notify="container"].alert-success  { background-color: #d1fae5; }
+body > div[data-notify="container"].alert-success  > span[data-notify="title"] { color: #065f46; }
+body > div[data-notify="container"].alert-danger   { background-color: #fee2e2; }
+body > div[data-notify="container"].alert-danger   > span[data-notify="title"] { color: #991b1b; }
+body > div[data-notify="container"].alert-warning  { background-color: #fef9c3; }
+body > div[data-notify="container"].alert-warning  > span[data-notify="title"] { color: #854d0e; }
 
-body>div[data-notify="container"]>span[data-notify="title"] {
-  display: block;
-  font-size: 18px;
-  font-weight: 500;
-  color: #333333;
-}
-
-body>div[data-notify="container"]>span[data-notify="message"] {
-  display: block;
-  padding: 20px 0 0;
-  font-size: 16px;
-  color: #747474;
-}
-
-body>div[data-notify="container"].alert-success {
-  background-color: #d4edda;
-}
-
-body>div[data-notify="container"].alert-success>span[data-notify="title"] {
-  color: #155724;
-}
-
-body>div[data-notify="container"].alert-danger {
-  background-color: #f8d7da;
-}
-
-body>div[data-notify="container"].alert-danger>span[data-notify="title"] {
-  color: #721c24;
-}
-
-body>div[data-notify="container"].alert-warning {
-  background-color: #fff3cd;
-}
-
-body>div[data-notify="container"].alert-warning>span[data-notify="title"] {
-  color: #856404;
-}
-
-
-/* Component: Button */
-
-.btn,
-.btn-default,
-.file-loader>label {
-  border-radius: 2px;
-  font-size: 14px;
-  font-weight: 500;
-  padding: 8px 16px;
-  min-height: calc(16px + 1.42857143em);
-  text-transform: uppercase;
-
-  width: 100%;
-  border: 0;
-  background-image: none;
-  background-color: transparent;
-  color: %color:Primary 500%;
-  text-shadow: none;
-  box-shadow: none;
-  -webkit-box-shadow: none;
-
-  position: relative;
-}
-
-.btn:hover,
-.btn:focus,
-.file-loader>label:hover {
-  background-color: rgba(153, 153, 153, 0.2);
-  background-image: none;
-  outline: none;
-  color: %color:Primary 500%;
-}
-
-.btn:active,
-.btn:active:focus {
-  background-color: rgba(153, 153, 153, 0.4);
-  background-image: none;
-  outline: none;
-  box-shadow: none;
-  color: %color:Primary 500%;
-}
-
-.btn[disabled] {
-  color: rgba(0, 0, 0, .25);
-}
-
-.anvil-role-raised>.btn[disabled],
-.anvil-role-primary-color>.btn[disabled],
-.anvil-role-secondary-color>.btn[disabled] {
-  background-color: rgba(0, 0, 0, 0.12) !important;
-  color: rgba(0, 0, 0, 0.25) !important;
-  box-shadow: none !important;
-}
-
-.anvil-role-raised>.btn,
-.anvil-role-primary-color>.btn,
-.anvil-role-secondary-color>.btn,
-.anvil-role-raised.file-loader>label,
-.anvil-role-primary-color.file-loader>label,
-.anvil-role-secondary-color.file-loader>label,
-.btn-primary,
-.btn-success,
-.btn-info,
-.btn-warning,
-.btn-danger {
-  /* 2dp */
-  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
-}
-
-.anvil-role-raised>.btn:active,
-.anvil-role-primary-color>.btn:active,
-.anvil-role-secondary-color>.btn:active,
-.btn-primary:active,
-.btn-primary:active,
-.btn-success:active,
-.btn-info:active,
-.btn-warning:active,
-.btn-danger:active {
-  /* 8dp */
-  box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.2);
-  top: -1px;
-}
-
-.anvil-role-primary-color>.btn,
-.btn-primary,
-.anvil-role-primary-color.file-loader>label {
-  color: white;
-  background-color: %color:Primary 500%;
-}
-
-.anvil-role-secondary-color>.btn,
-.anvil-role-secondary-color.file-loader>label {
-  color: white;
-  background-color: %color:Secondary 500%;
-}
-
-.btn-success,
-.btn-info,
-.btn-warning,
-.btn-danger {
-  color: white;
-}
-
-.anvil-role-primary-color>.btn:hover,
-.anvil-role-primary-color>.btn:active,
-.anvil-role-primary-color>.btn:focus,
-.btn-primary:hover,
-.btn-primary:active,
-.btn-primary:focus {
-  color: white;
-  background-color: %color:Primary 700%;
-}
-
-.anvil-role-secondary-color>.btn:hover,
-.anvil-role-secondary-color>.btn:active,
-.anvil-role-secondary-color>.btn:focus {
-  color: white;
-  background-color: %color:Secondary 700%;
-}
-
-.anvil-role-lever-button>.btn {
-  /* 2dp */
-  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
-  border-radius: 0.0px;
-  font-size: 14px;
-  font-weight: 500;
-  padding: 0px 0px;
-  min-height: calc(0px + 1.42857143em);
-  border: solid;
-  border-color: rgba(73, 73, 73, 0.568);
-  border-radius: 4px;
-  border-width: 1px 1px 1px 1px
-}
-
-.anvil-role-lever-button>.btn:hover {
-  border-color: rgba(37, 37, 37, 0.747);
-}
-
-
-.anvil-panel-col-BITUCV {
-  background-color: #ffffff;
-}
-
-.anvil-role-bottom-border {
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-  background-color: #ffffff;
-}
-
-
-.anvil-panel-col-OROLTQ {
-  display: none;
-  min-width: 150px;
-}
-
-.anvil-role-arrow-button>.btn {
-  padding: 5px 0px 0px 0px !important;
-  min-height: 1em !important;
-}
-
-.anvil-role-arrow-button {
-  width: 15px !important;
-}
-
-.anvil-role-lever-buttons {
-  width: 110px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.anvil-role-lever-label>.link-text {
-  border-radius: 0px;
-  font-size: 14px;
-  color: black;
-  padding-top: 2px;
-  padding-bottom: 0px;
-  padding-left: 0px;
-  padding-right: 0px;
-  vertical-align: middle;
-  min-height: 0;
-  text-transform: none;
-  text-align: left;
-  border: 0;
-  background-image: none;
-  background-color: transparent;
-  text-shadow: none;
-  box-shadow: none;
-  -webkit-box-shadow: none;
-  border-radius: 4px;
-  position: relative;
-}
-
-.anvil-role-year-dropdown .form-control {
-  height: 2em !important;
-  padding: 0px !important;
-}
-
-.anvil-role-active-button>button>.button-text {
-  text-decoration: underline;
-}
-
-/* Component: Card */
-
-.anvil-role-card {
-  overflow: hidden;
-  border-radius: 2px;
-  background-color: white;
-  padding: 8px 12px;
-  /* 2dp */
-  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
-}
-
-/* full_width_row sections go full bleed */
-.column-panel.anvil-role-card>.anvil-panel-section>.anvil-panel-section-container.full-width-row {
-  margin-left: -12px;
-  margin-right: -12px;
-  width: initial;
-}
-
-/* If the first row of a card is a full_width_row, it goes to the top */
-.column-panel.anvil-role-card>.anvil-panel-section:first-child>.anvil-panel-section-container.full-width-row {
-  margin-top: -8px;
-}
-
-.column-panel.anvil-role-card>.anvil-panel-section:last-child>.anvil-panel-section-container.full-width-row {
-  margin-bottom: -8px;
-}
-
-/* Component: TextBox + TextArea */
-
+/* ─── Form inputs ────────────────────────────────────────────────────────────── */
 input.anvil-component,
 textarea.anvil-component,
 .anvil-component select,
 .anvil-datepicker input {
-  font-size: 16px;
+  font-family: Inter, Arial, sans-serif;
+  font-size: 14px;
   line-height: 1.5;
   border-radius: 0;
   background-color: transparent;
-  color: rgba(0, 0, 0, 0.87);
-
+  color: var(--text-primary);
   box-shadow: none;
 }
 
-.anvil-dropdown {
-  font-size: 16px;
-}
-
-.anvil-component select {
-  font-size: inherit;
-}
+.anvil-dropdown { font-size: 14px; }
+.anvil-component select { font-size: inherit; }
 
 input.anvil-component,
 .anvil-component select,
 .anvil-datepicker input {
   padding: 8px 0 4px;
   border: 0;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.42);
-
+  border-bottom: 1px solid var(--border-mid);
   transition: border-bottom 0.2s, padding-bottom 0.2s;
   -moz-transition: none;
-  /* Firefox is jumpy, so disable transitions */
 }
 
 textarea.anvil-component {
   padding: 4px 8px;
-  border: 1px solid rgba(0, 0, 0, 0.42);
-  border-radius: 2px;
+  border: 1px solid var(--border-mid);
+  border-radius: var(--radius);
   transition: border 0.2s, padding 0.2s;
   -moz-transition: none;
-  /* Firefox is jumpy, so disable transitions */
 }
 
 .anvil-dropdown select.form-control {
-
   -webkit-appearance: none;
   -moz-appearance: none;
   padding: 8px 2em 4px 0;
-
-  /* ew ew ew - select elements are weird and don't obey line-height, so we just
-     set the height explicitly. Ugh. */
   height: calc(1.5em + 13px);
-  /* 8px + 4px padding + 1px border = 13px */
 }
 
-.anvil-dropdown {
-  position: relative;
-}
+.anvil-dropdown { position: relative; }
 
-/* Select arrow styling */
 .anvil-dropdown form:before {
   content: "\25BC";
   position: absolute;
   right: 0;
   font-size: 80%;
   line-height: calc(1.8em + 8px);
-  color: #555;
+  color: var(--text-muted);
   pointer-events: none;
-  padding: 4px 4px;
-}
-
-.anvil-component select,
-.anvil-datepicker input {
-  margin-bottom: 0px;
-}
-
-input.anvil-component.anvil-spacing-below-none {
-  margin-bottom: 0;
-}
-
-input.anvil-component.anvil-spacing-below-small {
-  margin-bottom: 0;
-}
-
-input.anvil-component.anvil-spacing-below-medium {
-  margin-bottom: 12px;
-}
-
-input.anvil-component.anvil-spacing-below-large {
-  margin-bottom: 20px;
-}
-
-input.anvil-component::-webkit-input-placeholder,
-textarea.anvil-component::-webkit-input-placeholder {
-  color: rgba(0, 0, 0, 0.54);
-}
-
-input.anvil-component::-moz-placeholder,
-textarea.anvil-component::-moz-placeholder {
-  color: rgba(0, 0, 0, 0.54);
-}
-
-input.anvil-component::placeholder,
-textarea.anvil-component::placeholder {
-  color: rgba(0, 0, 0, 0.54);
-}
-
-.app-bar input.anvil-component::-webkit-input-placeholder,
-.app-bar textarea.anvil-component::-webkit-input-placeholder {
-  color: rgba(255, 255, 255, 0.8);
-}
-
-.app-bar input.anvil-component::-moz-placeholder,
-.app-bar textarea.anvil-component::-moz-placeholder {
-  color: rgba(255, 255, 255, 0.8);
-}
-
-.app-bar input.anvil-component::placeholder,
-.app-bar textarea.anvil-component::placeholder {
-  color: rgba(255, 255, 255, 0.8);
+  padding: 4px;
 }
 
 input.anvil-component:hover,
 .anvil-component select:hover,
 .anvil-datepicker input:hover {
-  border-bottom: 2px solid rgba(0, 0, 0, .87);
+  border-bottom: 2px solid var(--primary-mid);
   padding-bottom: 3px;
 }
 
 input.anvil-component:focus,
 .anvil-component select:focus,
 .anvil-datepicker input:focus {
-  border-bottom: 2px solid %color:Primary 700%;
+  border-bottom: 2px solid var(--primary);
   padding-bottom: 3px;
   box-shadow: none;
 }
@@ -1737,44 +1185,30 @@ input.anvil-component:focus,
 input.anvil-component[disabled],
 .anvil-component select[disabled],
 .anvil-datepicker input[disabled] {
-  border-bottom: 1px dashed #888;
+  border-bottom: 1px dashed #ccc;
   padding-bottom: 4px;
   background-color: transparent;
 }
 
-textarea.anvil-component:hover {
-  border: 2px solid rgba(0, 0, 0, 0.87);
-  padding: 3px 7px;
-}
+textarea.anvil-component:hover  { border: 2px solid var(--primary-mid); padding: 3px 7px; }
+textarea.anvil-component:focus  { border: 2px solid var(--primary); padding: 3px 7px; box-shadow: none; }
+textarea.anvil-component[disabled] { border: 1px dashed #ccc; padding: 4px 8px; background: transparent; }
 
-textarea.anvil-component:focus {
-  border: 2px solid %color:Primary 700%;
-  padding: 3px 7px;
-  box-shadow: none;
-}
+.daterangepicker td.active       { background-color: var(--primary-mid); }
+.daterangepicker td.active:hover { background-color: var(--primary); }
+.daterangepicker .btn-success    { color: var(--primary-mid); }
 
-textarea.anvil-component[disabled] {
-  border: 1px dashed #888;
-  padding: 4px 8px;
-  background-color: transparent;
-}
+/* ─── Scrollbars ─────────────────────────────────────────────────────────────── */
+::-webkit-scrollbar            { width: 6px; height: 6px; }
+::-webkit-scrollbar-track      { background: rgba(241,245,249,0.8); border-radius: 3px; }
+::-webkit-scrollbar-thumb      { background: rgba(55,48,163,0.22); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover{ background: rgba(55,48,163,0.40); }
 
-.daterangepicker td.active {
-  background-color: %color:Primary 500%;
-}
+/* ─── Content padding ────────────────────────────────────────────────────────── */
+.content > * > .anvil-container { padding: 3px; }
+.content .anvil-measure-this    { padding-bottom: 1px; }
 
-.daterangepicker td.active:hover {
-  background-color: %color:Primary 700%;
-}
+.anvil-container-overflow { overflow-x: visible; overflow-y: visible; }
 
-.daterangepicker .btn-success {
-  color: %color:Primary 500%;
-}
-
-/* Component: CheckBox, RadioButton */
-/* Ugh. These are definitely TODO right now. */
-
-.checkbox,
-.radio {
-  font-size: 16px;
-}
+/* checkbox / radio */
+.checkbox, .radio { font-size: 15px; }
